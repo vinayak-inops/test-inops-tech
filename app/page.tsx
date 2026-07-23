@@ -1,3 +1,5 @@
+"use client"
+
 import HomePageClient from "@/app/HomePageClient";
 import FAQPageJsonLd from "@/app/components/FAQPageJsonLd";
 import HomePageJsonLd from "@/app/components/HomePageJsonLd";
