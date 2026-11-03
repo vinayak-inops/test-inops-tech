@@ -116,6 +116,9 @@ const nextConfig: NextConfig = {
       { source: "/content-management-system/", destination: "/contract-labour-management", permanent: true },
       { source: "/favicon.ico", destination: "/favicon.png", permanent: false },
       { source: "/site.webmanifest", destination: "/manifest.webmanifest", permanent: false },
+      // ── Merged blog posts ─────────────────────────────────────────────────────
+      { source: "/blog/labour-management-system-software-guide", destination: "/contract-labour-management", permanent: true },
+      { source: "/blog/labour-management-system-software-guide/", destination: "/contract-labour-management", permanent: true },
       // ── Dead WordPress blog posts → /blog ─────────────────────────────
       { source: "/top-8-access-control-technology-trends-for-2024", destination: "/blog/access-control-trends-manufacturing", permanent: true },
       { source: "/top-8-access-control-technology-trends-for-2024/", destination: "/blog/access-control-trends-manufacturing", permanent: true },

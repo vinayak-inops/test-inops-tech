@@ -344,7 +344,7 @@ export default function ResearchInsightsPage() {
               <Link className="ri-card ri-link-card" href="/blog/vendor-management-contractors-manufacturing"><span className="ri-tag">Contractors</span><h3>Vendor management for contractors in manufacturing</h3><p>Licences, renewals, headcount caps and performance.</p></Link>
               <Link className="ri-card ri-link-card" href="/blog/what-is-contract-labour-management-system"><span className="ri-tag">CLMS</span><h3>Contract labour management system (CLMS) explained</h3><p>What a CLMS does and how it differs from an HRMS.</p></Link>
               <Link className="ri-card ri-link-card" href="/blog/clms-vs-hrms-difference"><span className="ri-tag">CLMS</span><h3>CLMS vs HRMS</h3><p>Why manufacturers usually need both, and where each fits.</p></Link>
-              <Link className="ri-card ri-link-card" href="/blog/labour-management-system-software-guide"><span className="ri-tag">Buyer&apos;s guide</span><h3>Labour management system software guide</h3><p>What to look for across permanent and contract workforces.</p></Link>
+              <Link className="ri-card ri-link-card" href="/contract-labour-management"><span className="ri-tag">Buyer&apos;s guide</span><h3>Labour management system software guide</h3><p>What to look for across permanent and contract workforces.</p></Link>
               <Link className="ri-card ri-link-card" href="/blog/10-signs-factory-outgrown-spreadsheet-contractor-management"><span className="ri-tag">Operations</span><h3>10 signs you&apos;ve outgrown spreadsheets</h3><p>When contractor management needs a system.</p></Link>
             </div>
             <p className="ri-note">More articles on the <Link href="/blog">InOps blog</Link>.</p>

@@ -25,7 +25,7 @@ const TAB_LABEL: Record<TabId, string> = Object.fromEntries(
   TABS.map((t) => [t.id, t.label])
 ) as Record<TabId, string>;
 
-const allPosts = [...blogPosts].sort((a, b) => b.dateIso.localeCompare(a.dateIso));
+const allPosts = [...blogPosts].filter((p) => !p.hideFromListing).sort((a, b) => b.dateIso.localeCompare(a.dateIso));
 
 const blogBanner = {
   src: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1920&q=85",

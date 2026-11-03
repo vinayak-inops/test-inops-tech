@@ -21,7 +21,7 @@ const navItems: NavItem[] = [
   { label: "Platform", href: "#solutions", solutionsMega: true },
   { label: "Services", href: "#services-menu", servicesMega: true },
   { label: "About", href: "/about" },
-  { label: "Resources", href: "#resources", dropdown: ["Blog", "Brochures", "Research & Insights", "CLMS Pricing", "Glossary"] },
+  { label: "Resources", href: "#resources", dropdown: ["Blog", "Brochures", "Research & Insights", "CLMS Pricing", "Glossary", "Case Studies"] },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -53,6 +53,7 @@ const resourceRoutes: Record<string, string> = {
   "Research & Insights": "/research-insights",
   "CLMS Pricing": "/clms-pricing",
   Glossary: "/glossary",
+  "Case Studies": "/case-studies",
 };
 
 function pathUsesSolidNavBar(path: string) {
@@ -60,6 +61,7 @@ function pathUsesSolidNavBar(path: string) {
     path.startsWith("/contact") ||
     path.startsWith("/earned-wage-access") ||
     path.startsWith("/about") ||
+    path.startsWith("/case-studies") ||
     path.startsWith("/product") ||
     path.startsWith("/blog") ||
     path.startsWith("/brochures") ||

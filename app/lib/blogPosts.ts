@@ -40,6 +40,8 @@ export type BlogPost = {
   dateModifiedIso?: string;
   /** When set, overrides post.title as the visible page H1 (title remains the SEO <title>). */
   h1?: string;
+  /** When true, hides the post from the blog listing page (e.g. merged/redirected posts). */
+  hideFromListing?: boolean;
   /** When present, emits HowTo schema — for step-by-step process articles. */
   howTo?: {
     name: string;
@@ -3812,7 +3814,7 @@ export const blogPosts: BlogPost[] = [
     {
       "heading": "Evaluation checklist",
       "paragraphs": [
-        "See also: <a href=\"/blog/what-is-contract-labour-management-system\" class=\"text-blue-600 underline\">What is a Contract Labour Management System (CLMS)?</a> explains how CLMS extends beyond attendance into CLRA compliance, contractor management and payroll — and <a href=\"/blog/labour-management-system-software-guide\" class=\"text-blue-600 underline\">Labour Management System Software: A Complete Guide</a> covers the broader workforce management stack for Indian manufacturers."
+        "See also: <a href=\"/blog/what-is-contract-labour-management-system\" class=\"text-blue-600 underline\">What is a Contract Labour Management System (CLMS)?</a> explains how CLMS extends beyond attendance into CLRA compliance, contractor management and payroll — and <a href=\"/contract-labour-management\" class=\"text-blue-600 underline\">Labour Management System Software: A Complete Guide</a> covers the broader workforce management stack for Indian manufacturers."
       ],
       "list": [
         "Does it handle rotating and overlapping shifts, not just fixed hours?",
@@ -4227,6 +4229,7 @@ export const blogPosts: BlogPost[] = [
   ]
 },{
   "slug": "labour-management-system-software-guide",
+  hideFromListing: true,
   "title": "Labour Management System Software for Indian Plants",
   "description": "Labour management system software runs permanent and contract workers on one platform: attendance, compliance, payroll. How it differs from HRMS.",
   "author": "Satish Sinha",
@@ -4333,8 +4336,8 @@ export const blogPosts: BlogPost[] = [
 },
   {
     slug: "what-is-contract-labour-management-system",
-    title: "CLMS Full Form: Contract Labour Management System Explained",
-    h1: "CLMS Full Form: Contract Labour Management System (CLMS) Explained",
+    title: "CLMS Full Form & Meaning: What a CLMS Does | InOps",
+    h1: "CLMS Full Form and Meaning: What a CLMS Does",
     description:
       "CLMS stands for Contract Labour Management System: software that runs contract workers from gate to payroll and keeps CLRA registers audit-ready.",
     author: "Satish Sinha",
@@ -4468,7 +4471,7 @@ export const blogPosts: BlogPost[] = [
           '<a href="/blog/factory-gate-entry-rules-contract-workers" class="text-blue-600 underline">Factory gate entry rules for contract workers</a> — the 19 checks that should run before a worker enters, and how to score your own gate.',
           '<a href="/blog/vendor-management-contractors-manufacturing" class="text-blue-600 underline">Vendor management for contractors in manufacturing</a> — licences, document currency, headcount caps and principal-employer liability.',
           '<a href="/blog/clra-compliance-checklist-india-2026" class="text-blue-600 underline">CLRA compliance checklist</a> — the full register, licence and statutory-return checklist for a principal employer.',
-          '<a href="/blog/labour-management-system-software-guide" class="text-blue-600 underline">Labour management system software: a complete guide</a> — how a CLMS fits into the broader labour management stack covering permanent and contract workers together.',
+          '<a href="/contract-labour-management" class="text-blue-600 underline">Labour management system software: a complete guide</a> — how a CLMS fits into the broader labour management stack covering permanent and contract workers together.',
         ],
       },
       {

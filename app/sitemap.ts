@@ -92,7 +92,7 @@ const CLUSTER_SLUGS = new Set([
   "10-signs-factory-outgrown-spreadsheet-contractor-management",
 ]);
 
-const blogRoutes = blogPosts.map((post) => ({
+const blogRoutes = blogPosts.filter((post) => !post.hideFromListing).map((post) => ({
   path: `/blog/${post.slug}`,
   priority: PILLAR_SLUGS.has(post.slug) ? 0.8
     : RESEARCH_SLUGS.has(post.slug) ? 0.75
