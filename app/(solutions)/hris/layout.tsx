@@ -4,7 +4,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import { hrisFaqItems } from "@/app/lib/hrisFaqItems";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "HRIS Software India for Manufacturing | Payroll & Attendance";
+const PAGE_TITLE = "HRIS & Payroll Software for Manufacturing in India | InOps";
 const PAGE_DESCRIPTION =
   "HRIS software for Indian manufacturers: biometric attendance, PF, ESI, PT and LWF payroll, leave and employee records across plants. Works with InOps CLMS.";
 

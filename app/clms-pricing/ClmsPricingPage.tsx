@@ -149,10 +149,19 @@ export default function ClmsPricingPage() {
           </nav>
           <section className="cp-hero" aria-labelledby="cp-h1">
             <span className="cp-eyebrow">Iddion RegX · Pricing</span>
-            <h1 id="cp-h1">CLMS software pricing in India</h1>
+            <h1 id="cp-h1">CLMS Software Pricing in India</h1>
             <p className="cp-lede">Iddion RegX, InOps&apos;s contract labour management system, is quoted for each deployment rather than sold from a public price list. What you pay depends on how many contract workers and sites you manage, the modules you choose, where the system is hosted, what it connects to, and whether you need gate or biometric hardware.</p>
             <div className="cp-hero-actions">
-              <a className="cp-btn cp-btn-primary" href="mailto:contact@inops.tech?subject=CLMS%20pricing%20enquiry%20(Iddion%20RegX)">Email contact@inops.tech for a quote</a>
+              <Link
+                className="cp-btn cp-btn-primary"
+                href="/contact"
+                onClick={() => {
+                  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+                  gtag?.("event", "generate_lead", { source: "clms_pricing_hero" });
+                }}
+              >
+                Get a Quote
+              </Link>
               <Link className="cp-btn cp-btn-ghost" href="/contact">Book a demo</Link>
             </div>
             <p className="cp-hero-note">This page explains how pricing is worked out. It does not publish rates; a quote applies only when InOps issues it to you in writing.</p>
@@ -282,7 +291,7 @@ export default function ClmsPricingPage() {
             <p className="cp-kicker">Getting a quote</p>
             <h2 id="cp-h-steps">How to get an Iddion RegX quote</h2>
             <ol className="cp-steps">
-              <li><h3>Email us</h3><p>Write to <a href="mailto:contact@inops.tech?subject=CLMS%20pricing%20enquiry%20(Iddion%20RegX)">contact@inops.tech</a> with the details below.</p></li>
+              <li><h3>Contact us</h3><p><Link href="/contact">Fill in the contact form</Link> with the details below and we&apos;ll follow up within one business day.</p></li>
               <li><h3>Scoping call</h3><p>The InOps team follows up to understand your sites, contractors and compliance needs.</p></li>
               <li><h3>Demo</h3><p>See the modules you&apos;re considering, mapped to your own workflow.</p></li>
               <li><h3>Written quote</h3><p>You receive a quote with each line item set out.</p></li>
@@ -322,7 +331,16 @@ export default function ClmsPricingPage() {
             <h2 id="cp-h-cta">Get a CLMS quote for your plants</h2>
             <p>Tell us about your sites, contract workforce and systems, and we&apos;ll scope Iddion RegX for your operation.</p>
             <div className="cp-cta-row">
-              <a className="cp-btn cp-btn-primary" href="mailto:contact@inops.tech?subject=CLMS%20pricing%20enquiry%20(Iddion%20RegX)&body=Company%3A%0ANumber%20of%20sites%3A%0AApprox.%20contract%20workers%3A%0AModules%20of%20interest%3A%0AHosted%20or%20on-premises%3A%0ASystems%20to%20integrate%3A%0AExisting%20devices%20(make%2C%20model%2C%20count)%3A%0A">Email contact@inops.tech</a>
+              <Link
+                className="cp-btn cp-btn-primary"
+                href="/contact"
+                onClick={() => {
+                  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+                  gtag?.("event", "generate_lead", { source: "clms_pricing_cta" });
+                }}
+              >
+                Get a quote
+              </Link>
               <Link className="cp-btn cp-btn-ghost" href="/contact">Book a demo</Link>
             </div>
           </div>

@@ -2,7 +2,7 @@ import SolutionSchemaInjector from "@/app/components/SolutionSchemaInjector";
 import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "Order Management System | End-to-End Order Tracking for Manufacturers";
+const PAGE_TITLE = "Order Management System for Manufacturers | InOps";
 const PAGE_DESCRIPTION =
   "Streamline order lifecycle from placement to fulfillment — integrated with inventory and dispatch workflows for Indian manufacturing and industrial operations.";
 

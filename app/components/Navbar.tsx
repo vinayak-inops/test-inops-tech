@@ -56,37 +56,22 @@ const resourceRoutes: Record<string, string> = {
   "Case Studies": "/case-studies",
 };
 
+const RESOURCE_MENU = {
+  evaluate: [
+    { label: "Case Studies", href: "/case-studies", desc: "Real results from Indian manufacturers" },
+    { label: "Brochures", href: "/brochures", desc: "Product & solution overviews" },
+    { label: "CLMS Pricing", href: "/clms-pricing", desc: "How RegX is quoted and scoped" },
+  ],
+  learn: [
+    { label: "Blog", href: "/blog", desc: "Compliance guides and workforce tech" },
+    { label: "Glossary", href: "/glossary", desc: "CLRA, ECR, and labour law terms" },
+    { label: "Research & Insights", href: "/research-insights", desc: "Data and analysis on CLMS adoption" },
+  ],
+};
+
 function pathUsesSolidNavBar(path: string) {
-  return (
-    path.startsWith("/contact") ||
-    path.startsWith("/earned-wage-access") ||
-    path.startsWith("/about") ||
-    path.startsWith("/case-studies") ||
-    path.startsWith("/product") ||
-    path.startsWith("/blog") ||
-    path.startsWith("/brochures") ||
-    path.startsWith("/canteen-and-visitor") ||
-    path.startsWith("/cctv-attendance") ||
-    path.startsWith("/contract-labour-management") ||
-    path.startsWith("/enterprise-solution") ||
-    path.startsWith("/earned-wage-access") ||
-    path.startsWith("/fixed-asset-management") ||
-    path.startsWith("/hris") ||
-    path.startsWith("/mobile-app-attendance") ||
-    path.startsWith("/visitor-management") ||
-    path.startsWith("/accessories") ||
-    path.startsWith("/face-recognition-attendance") ||
-    path.startsWith("/turnstiles-access") ||
-    path.startsWith("/warehouse-management") ||
-    path.startsWith("/delivery-management") ||
-    path.startsWith("/order-management") ||
-    path.startsWith("/biometric-devices") ||
-    path.startsWith("/self-service-kiosk") ||
-    path.startsWith("/brands/zkteco") ||
-    path.startsWith("/clms-pricing") ||
-    path.startsWith("/glossary") ||
-    path.startsWith("/research-insights")
-  );
+  // Only the homepage gets the transparent/hero navbar; every other path is solid.
+  return path !== "/";
 }
 
 export default function Navbar() {
@@ -332,7 +317,64 @@ export default function Navbar() {
                   </motion.button>
 
                   <AnimatePresence>
-                    {openDropdown === item.label && (
+                    {openDropdown === item.label && item.label === "Resources" && (
+                      <motion.div
+                        id={`nav-dropdown-${item.label.replace(/\s+/g, "-").toLowerCase()}`}
+                        role="group"
+                        aria-label="Resources submenu"
+                        initial={{ opacity: 0, y: -8, scale: 0.96 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                        transition={dropdownTransition}
+                        className="absolute left-0 top-full z-[100] min-w-[480px] origin-top-left pt-2"
+                      >
+                        <div className="rounded-xl border border-slate-200/90 bg-white p-4 shadow-lg shadow-slate-900/[0.06] ring-1 ring-slate-950/[0.03]">
+                          <div className="grid grid-cols-2 gap-x-4">
+                            <div>
+                              <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Evaluate</p>
+                              {RESOURCE_MENU.evaluate.map((entry, j) => (
+                                <motion.div
+                                  key={entry.href}
+                                  initial={{ opacity: 0, x: -4 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.18, delay: 0.03 * j }}
+                                >
+                                  <Link
+                                    href={entry.href}
+                                    onClick={() => setOpenDropdown(null)}
+                                    className="block rounded-lg px-2 py-2 transition-colors hover:bg-blue-50"
+                                  >
+                                    <span className="block text-sm font-semibold text-gray-800 hover:text-blue-600">{entry.label}</span>
+                                    <span className="block text-xs text-slate-500">{entry.desc}</span>
+                                  </Link>
+                                </motion.div>
+                              ))}
+                            </div>
+                            <div className="border-l border-slate-100 pl-4">
+                              <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Learn</p>
+                              {RESOURCE_MENU.learn.map((entry, j) => (
+                                <motion.div
+                                  key={entry.href}
+                                  initial={{ opacity: 0, x: -4 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.18, delay: 0.03 * j }}
+                                >
+                                  <Link
+                                    href={entry.href}
+                                    onClick={() => setOpenDropdown(null)}
+                                    className="block rounded-lg px-2 py-2 transition-colors hover:bg-blue-50"
+                                  >
+                                    <span className="block text-sm font-semibold text-gray-800 hover:text-blue-600">{entry.label}</span>
+                                    <span className="block text-xs text-slate-500">{entry.desc}</span>
+                                  </Link>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                    {openDropdown === item.label && item.label !== "Resources" && (
                       <motion.div
                         id={`nav-dropdown-${item.label.replace(/\s+/g, "-").toLowerCase()}`}
                         role="group"
@@ -611,21 +653,52 @@ export default function Navbar() {
                               transition={{ duration: 0.2, ease: "easeOut" }}
                               className="overflow-hidden"
                             >
-                              <div className="space-y-1 border-t border-gray-100 px-2 pb-3 pt-1">
-                                {item.dropdown.map((d) => {
-                                  const href = resolveHref(item.label, d);
-                                  return (
-                                    <Link
-                                      key={d}
-                                      href={href}
-                                      className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-                                      onClick={() => setMobileOpen(false)}
-                                    >
-                                      {d}
-                                    </Link>
-                                  );
-                                })}
-                              </div>
+                              {item.label === "Resources" ? (
+                                <div className="border-t border-gray-100 px-3 pb-3 pt-2 space-y-3">
+                                  <div>
+                                    <p className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-slate-400 px-1">Evaluate</p>
+                                    {RESOURCE_MENU.evaluate.map((entry) => (
+                                      <Link
+                                        key={entry.href}
+                                        href={entry.href}
+                                        className="block rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                                        onClick={() => setMobileOpen(false)}
+                                      >
+                                        {entry.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                  <div className="border-t border-gray-100 pt-2">
+                                    <p className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-slate-400 px-1">Learn</p>
+                                    {RESOURCE_MENU.learn.map((entry) => (
+                                      <Link
+                                        key={entry.href}
+                                        href={entry.href}
+                                        className="block rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                                        onClick={() => setMobileOpen(false)}
+                                      >
+                                        {entry.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              ) : (
+                                <div className="space-y-1 border-t border-gray-100 px-2 pb-3 pt-1">
+                                  {item.dropdown.map((d) => {
+                                    const href = resolveHref(item.label, d);
+                                    return (
+                                      <Link
+                                        key={d}
+                                        href={href}
+                                        className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+                                        onClick={() => setMobileOpen(false)}
+                                      >
+                                        {d}
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              )}
                             </motion.div>
                           )}
                         </AnimatePresence>

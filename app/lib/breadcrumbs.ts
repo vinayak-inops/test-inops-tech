@@ -13,6 +13,10 @@ const LABEL_BY_PATH: Record<string, string> = {
   "/contact": "Contact",
   "/blog": "Blog",
   "/brochures": "Brochures",
+  "/case-studies": "Case Studies",
+  "/glossary": "Glossary",
+  "/research-insights": "Research & Insights",
+  "/clms-pricing": "CLMS Pricing",
   "/face-recognition-attendance": "Face Recognition Attendance",
   "/turnstiles-access": "Turnstiles",
   "/accessories": "Accessories",
@@ -58,12 +62,28 @@ export function getBreadcrumbsForPath(pathname: string): BreadcrumbItem[] {
     "/biometric-devices"
   ]);
   const productPaths = new Set(["/face-recognition-attendance", "/turnstiles-access", "/accessories"]);
+  const resourcePaths = new Set([
+    "/brochures",
+    "/case-studies",
+    "/glossary",
+    "/research-insights",
+  ]);
 
   if (solutionPaths.has(normalized)) {
     return [HOME, { name: "Solutions", path: "/#solutions" }, { name: label, path: normalized }];
   }
   if (productPaths.has(normalized)) {
     return [HOME, { name: "Products", path: "/face-recognition-attendance" }, { name: label, path: normalized }];
+  }
+  if (resourcePaths.has(normalized)) {
+    return [HOME, { name: "Resources", path: "/blog" }, { name: label, path: normalized }];
+  }
+  if (normalized === "/clms-pricing") {
+    return [
+      HOME,
+      { name: "Contract Labour Management", path: "/contract-labour-management" },
+      { name: label, path: normalized },
+    ];
   }
 
   return [HOME, { name: label, path: normalized }];

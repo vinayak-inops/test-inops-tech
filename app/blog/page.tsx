@@ -13,7 +13,7 @@ const viewport = { once: true, amount: 0.12 };
 
 const TABS = [
   { id: "all",       label: "All" },
-  { id: "ewa",       label: "Early Wage Access (EWA)" },
+  { id: "ewa",       label: "Earned Wage Access (EWA)" },
   { id: "clra",      label: "CLRA Compliance" },
   { id: "biometric", label: "Biometric Attendance" },
   { id: "clms",      label: "Contract Labour Management" },
@@ -57,6 +57,11 @@ export default function BlogPage() {
       {/* ── Banner ── */}
       <section className="no-site-reveal relative z-[1] px-4 pb-12 pt-24 sm:px-6 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-28">
         <div className="mx-auto max-w-7xl">
+          <nav aria-label="Breadcrumb" className="mb-4 text-sm text-slate-500">
+            <Link href="/" className="hover:text-slate-700">Home</Link>
+            <span aria-hidden> / </span>
+            <span aria-current="page">Blog</span>
+          </nav>
           <motion.header
             className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 text-center"
             initial={{ opacity: 0, y: 20 }}

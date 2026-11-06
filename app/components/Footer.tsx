@@ -32,11 +32,12 @@ const solutions = [
   { label: "EWA (Earned Wage Access)", href: "/earned-wage-access" },
 ];
 
-const company = [
-  { label: "About", href: "/about" },
+const resources = [
   { label: "Blog", href: "/blog" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Brochures", href: "/brochures" },
-  { label: "Contact", href: "/contact" },
+  { label: "Glossary", href: "/glossary" },
+  { label: "CLMS Pricing", href: "/clms-pricing" },
 ];
 
 const socialLinks = [
@@ -252,9 +253,9 @@ export default function Footer() {
             </div>
 
             <div className="mt-6">
-              <SectionTitle>Company</SectionTitle>
+              <SectionTitle>Resources</SectionTitle>
               <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
-                {company.map((item) => (
+                {resources.map((item) => (
                   <li key={item.href}>
                     <FooterLink href={item.href}>{item.label}</FooterLink>
                   </li>

@@ -360,17 +360,17 @@ export default function EwaPage() {
       <SolutionLandingHero
         badge={
           <span className="inline-flex rounded-full border border-blue-100 bg-white px-3 py-1 text-xs font-semibold text-blue-600">
-            Early wage access
+            Salary++ by InOps
           </span>
         }
         title={
           <>
-            Earned Wage Access for <span className="text-blue-600">factory workers</span>
+            Earned Wage Access for <span className="text-blue-600">Factory Workers</span>
           </>
         }
         subtitle="InOps EWA (Salary++) lets workers withdraw verified earned wages before payday — not a loan, no interest, auto-settled in the next payroll cycle. Zero capital outlay for employers."
         videoSrc={mediaVideos.ewaPlatformPreview}
-        imageSrc="/images/ewa-hero.png"
+        imageSrc="/images/payroll-solutions-hero.png"
         imageAlt="Workforce on site ,  earned wage access aligned to verified attendance"
         imageWrapperClassName={`relative mt-25 rounded-2xl  h-52 w-full overflow-hidden sm:h-60 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2 ${SPLIT_HERO_MEDIA_MR}`}
         splitHeroCopyStackClassName={SPLIT_HERO_COPY_ML}
@@ -378,6 +378,8 @@ export default function EwaPage() {
         imageClassName="object-cover object-[center_35%] sm:object-center lg:object-[center_40%]"
         gradientClassName="pointer-events-none absolute inset-0 bg-gradient-to-r from-white from-0% via-white/[0.98] via-[42%] to-transparent to-[62%] lg:via-[44%] lg:to-[68%]"
         imageSizes="(max-width: 1024px) 100vw, 50vw"
+        primaryCta={{ label: "Book a Demo", href: "/contact" }}
+        secondaryCta={{ label: "How Salary++ Works", href: "#ewa-how-it-works-heading" }}
         livePopups={[
           {
             position: "top-left",

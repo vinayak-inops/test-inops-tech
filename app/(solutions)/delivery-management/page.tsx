@@ -29,13 +29,14 @@ const heroData = {
   bgImageAlt: "Courier delivering a package, tracked live on dashboard and mobile",
   bgPosition: "72% 40%",
   gradientCenter: "18% 22%",
-  eyebrow: "Last-Mile Logistics Solution",
+  eyebrow: "InOps",
   titleLine1: "Delivery Management Software",
-  titleLine2: "for Last-Mile Logistics",
+  titleLine2: "for Last-Mile & Factory Dispatch",
   description:
     "Smart dispatch, live tracking, and digital proof-of-delivery for reliable last-mile operations that keep customers coming back.",
   buttons: [
-    { label: "Request Demo", href: "/contact", variant: "primary" as const },
+    { label: "Book a Demo", href: "/contact", variant: "primary" as const },
+    { label: "See Features", href: "#delivery-features", variant: "outline" as const },
   ],
 };
 
@@ -280,7 +281,7 @@ export default function DeliveryPage() {
     <main>
       <HeroSection {...heroData} />
       <PainPointsSection {...painData} />
-      <FeaturesSection {...featuresData} />
+      <FeaturesSection {...featuresData} id="delivery-features" />
       <LifecycleSection {...lifecycleData} variant="connected" />
       <AnimatedSection className="bg-blue-100/30 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

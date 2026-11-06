@@ -126,7 +126,7 @@ export default function FloatingActions() {
     <>
       {/* ── Floating form popup ── */}
       <div
-        className={`fixed bottom-[96px] right-5 z-[60] w-[300px] bg-white rounded-2xl shadow-[0_16px_48px_rgba(4,20,36,0.18)] border border-[#e2e8ee] overflow-hidden transition-all duration-300 ease-out origin-bottom-right ${
+        className={`fixed bottom-[112px] right-5 z-[60] w-[300px] bg-white rounded-2xl shadow-[0_16px_48px_rgba(4,20,36,0.18)] border border-[#e2e8ee] overflow-hidden transition-all duration-300 ease-out origin-bottom-right sm:bottom-[96px] ${
           formOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-90 pointer-events-none"
         }`}
       >
@@ -242,7 +242,7 @@ export default function FloatingActions() {
       <button
         onClick={() => setFormOpen((v) => !v)}
         aria-label={formOpen ? "Close contact form" : "Open contact form"}
-        className="fixed bottom-6 right-5 z-[60] flex items-center justify-center w-[54px] h-[54px] rounded-full bg-gradient-to-br from-[#1c7bb8] to-[#0d3a5c] shadow-[0_6px_22px_rgba(28,123,184,0.50)] hover:shadow-[0_8px_28px_rgba(28,123,184,0.65)] hover:-translate-y-[2px] transition-all duration-200"
+        className="fixed bottom-20 right-5 z-[60] flex items-center justify-center w-[54px] h-[54px] rounded-full bg-gradient-to-br from-[#1c7bb8] to-[#0d3a5c] shadow-[0_6px_22px_rgba(28,123,184,0.50)] hover:shadow-[0_8px_28px_rgba(28,123,184,0.65)] hover:-translate-y-[2px] transition-all duration-200 sm:bottom-6"
       >
         {/* Animate between message icon and close icon */}
         {formOpen ? (

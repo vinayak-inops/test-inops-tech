@@ -697,7 +697,7 @@ export default function LabourManagementPage() {
                     className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-blue-800 shadow-sm backdrop-blur-sm"
                   >
                     <span className="h-2 w-2 shrink-0 rounded-full bg-[color:var(--inops-blue)]" aria-hidden />
-                    HR Information System (HRIS)
+                    Iddion HRIS
                   </FlyInText>
 
                   <FlyInText
@@ -709,7 +709,7 @@ export default function LabourManagementPage() {
                     className="home-display-heading inops-type-hero mt-4 flex flex-col gap-1 text-slate-900 sm:mt-5 sm:gap-1.5"
                   >
                     <span className="text-slate-900 whitespace-nowrap">
-                      HRIS Software for <span className="text-[color:var(--inops-blue)]">Indian Manufacturing</span>
+                      HRIS &amp; Payroll Software for <span className="text-[color:var(--inops-blue)]">Indian Manufacturing</span>
                     </span>
                   </FlyInText>
 
@@ -734,9 +734,15 @@ export default function LabourManagementPage() {
                   >
                     <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
                       <Link href="/contact" className={inopsUi.btnPrimary}>
-                        Get In Touch
+                        Book a Demo
                       </Link>
                     </motion.div>
+                    <Link
+                      href="#labour-efficiency-heading"
+                      className="inline-flex items-center justify-center rounded-full border border-blue-200 bg-white px-7 py-3 text-sm font-semibold text-blue-800 shadow-sm transition hover:bg-blue-50"
+                    >
+                      See HRIS Modules
+                    </Link>
                   </FlyInText>
                 </div>
               </div>

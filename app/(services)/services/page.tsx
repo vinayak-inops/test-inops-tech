@@ -116,8 +116,7 @@ export default function ServicesPage() {
                 <span style={{ background: "linear-gradient(90deg, #5de3a5, #4fa3d8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                   Services
                 </span>{" "}
-                for Industrial{" "}<br />
-                Enterprises
+                for Indian Industry
               </h1>
               <p className="mt-6 text-[15.5px] leading-[1.75] text-white/60 max-w-[480px]">
                 InOps provides five workforce compliance services for industrial sites in India: worker background verification, biometric device AMC, biometric database audits, CLRA compliance audits and industrial manpower supply. Each is built for multi-site, contractor-heavy plants and can run with the InOps CLMS platform or on its own.
@@ -125,16 +124,16 @@ export default function ServicesPage() {
 
               {/* CTA row */}
               <div className="flex gap-3 mt-10 flex-wrap">
-                <Link
-                  href="/contact"
+                <a
+                  href="#all-services"
                   className="inline-flex items-center gap-2 py-[13px] px-6 rounded-lg text-[14px] font-bold no-underline text-[#0a1f3d] transition-all duration-150 hover:-translate-y-px hover:opacity-90"
                   style={{ background: "linear-gradient(135deg,#5de3a5,#3dcf8e)" }}
                 >
-                  Talk to an Expert
+                  View All Services
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
-                </Link>
+                </a>
                 <Link href="/contact" className="inline-flex items-center gap-2 py-[13px] px-6 rounded-lg text-[14px] font-bold no-underline border border-white/20 bg-white/[0.06] text-white transition-all duration-150 hover:-translate-y-px hover:bg-white/[0.10]">
-                  Request a Demo
+                  Talk to an Expert
                 </Link>
               </div>
 
@@ -191,7 +190,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ========== SERVICES GRID ========== */}
-      <section className="bg-white pt-[80px] px-[6vw] pb-[100px]">
+      <section id="all-services" className="bg-white pt-[80px] px-[6vw] pb-[100px]">
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-[40px] items-end mb-[52px]">
             <div>

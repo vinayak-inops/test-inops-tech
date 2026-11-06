@@ -570,7 +570,7 @@ export default function MobileAppPage() {
                   transition={{ duration: 0.45, ease: smoothEase, delay: 0.05 }}
                 >
                   <span className="inline-flex rounded-full border border-blue-200 bg-blue-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-blue-700">
-                    Mobile attendance
+                    Mobile Attendance App
                   </span>
                 </motion.div>
                 <motion.h1 className="home-display-heading inops-type-hero mt-4 text-slate-900 sm:mt-5"
@@ -578,7 +578,7 @@ export default function MobileAppPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.55, ease: smoothEase, delay: 0.1 }}
                 >
-                  Mobile Attendance <span className="text-blue-600">with Face Recognition</span>
+                  Mobile Attendance App <span className="text-blue-600">with Face Recognition</span>
                 </motion.h1>
                 <motion.p
                   className="mt-5 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base"
@@ -599,13 +599,13 @@ export default function MobileAppPage() {
                     href="/contact"
                     className="inline-flex items-center justify-center rounded-full bg-blue-700 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-sky-500/30"
                   >
-                    Get In Touch
+                    Book a Demo
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/face-recognition-attendance"
                     className="inline-flex items-center justify-center rounded-full border border-blue-200 bg-white px-7 py-3 text-sm font-semibold text-blue-800 shadow-sm transition hover:bg-blue-50"
                   >
-                    Get the app
+                    Compare Attendance Options
                   </Link>
                 </motion.div>
               </div>

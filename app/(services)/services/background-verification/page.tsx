@@ -14,17 +14,17 @@ export default function BGVPage() {
           <div>
             <div className="inline-flex items-center gap-[10px] text-[10.5px] tracking-[0.18em] uppercase text-white/[0.82] mb-7 font-semibold font-mono">
               <span className="w-[7px] h-[7px] rounded-full bg-[#5de3a5] flex-shrink-0" />
-              SERVICE 01 / 05 &nbsp;·&nbsp; BACKGROUND VERIFICATION
+              InOps Services
             </div>
             <h1 className="text-[clamp(32px,3.8vw,50px)] leading-[1.10] font-medium text-white tracking-[-0.02em] m-0">
-              Background Verification for Industrial Workforces
+              Background Verification for Contract & Blue-Collar Workers
             </h1>
             <p className="mt-[22px] text-[15px] leading-[1.7] text-white/[0.78] max-w-[500px]">
                InOps verifies contract and industrial workers before they reach your gate — identity, criminal, employment and address checks, deployed in days, not weeks.
             </p>
             <div className="flex gap-3 mt-9 flex-wrap">
               <Link href="/contact" className="inline-flex items-center gap-2 py-[14px] px-6 rounded-lg text-[14.5px] font-bold no-underline border-2 border-white/30 bg-white/[0.18] text-white transition-all duration-150 hover:-translate-y-px hover:opacity-90 hover:bg-white/[0.26]">
-                Book Assessment
+                Get a BGV Quote
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
               </Link>
               <Link href="/contact" className="inline-flex items-center gap-2 py-[14px] px-6 rounded-lg text-[14.5px] font-bold no-underline border-2 border-white/50 bg-transparent text-white transition-all duration-150 hover:-translate-y-px hover:opacity-90 hover:bg-white/[0.08]">

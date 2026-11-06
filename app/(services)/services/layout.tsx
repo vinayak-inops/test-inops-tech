@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { routeMetadata } from "@/app/lib/seoMetadata";
 import SecondaryPageJsonLd from "@/app/components/SecondaryPageJsonLd";
 
-const PAGE_TITLE = "InOps Services | BGV, Biometric AMC, CLRA Audit, Manpower";
+const PAGE_TITLE = "Workforce Compliance Services | BGV, AMC, CLRA Audit | InOps";
 const PAGE_DESCRIPTION =
   "Background verification, biometric AMC, CLRA compliance audits, biometric database audits and industrial manpower supply for multi-site plants in India.";
 

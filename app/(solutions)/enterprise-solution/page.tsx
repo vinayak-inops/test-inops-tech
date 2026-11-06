@@ -232,28 +232,18 @@ export default function EnterpriseSolutionPage() {
     
   ] as const;
 
-  const enterpriseClientLogos = [
-  
-    { src: "/clients/samsung.svg", alt: "Samsung" },
-    { src: "/clients/ibm.svg", alt: "IBM" },
-    { src: "/clients/volvo.svg", alt: "Volvo" },
-    { src: "/clients/yara.svg", alt: "Yara" },
-    { src: "/clients/dtc.svg", alt: "DTC" },
-    { src: "/clients/sap.svg", alt: "SAP" },
-  ] as const;
-
   return (
     <div className="solution-product-section-gap min-h-screen bg-white text-gray-900">
       <SolutionLandingHero
         badge={
           <span className="inline-flex rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">
-            The future of operations
+            InOps Enterprise Operations
           </span>
         }
         title={
           <>
-            Enterprise Operations Platform:{" "}
-            <span className="text-blue-600">Asset, Route &amp; Warehouse Management</span>
+            Enterprise Operations Platform{" "}
+            <span className="text-blue-600">for Manufacturers</span>
           </>
         }
         subtitle="Warehouse management, delivery routing, and order fulfilment — unified across all your industrial sites, and connected to the same workforce-visibility layer as InOps CLMS and HRIS."
@@ -279,6 +269,8 @@ export default function EnterpriseSolutionPage() {
             accent: "blue",
           },
         ]}
+        primaryCta={{ label: "Book a Demo", href: "/contact" }}
+        secondaryCta={{ label: "Explore Modules", href: "#core-modules-heading" }}
       />
 
       <section
@@ -491,35 +483,6 @@ export default function EnterpriseSolutionPage() {
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="bg-white pb-8 pt-2 lg:pb-10">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <motion.div
-            className="rounded-2xl border border-gray-200 bg-white px-5 py-7 shadow-[0_14px_35px_-28px_rgba(15,23,42,0.35)] sm:px-7"
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={viewport}
-            transition={{ duration: 0.45, ease: smoothEase }}
-          >
-            <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
-              Deployed Across Enterprises
-            </p>
-            <div className="mt-6 grid grid-cols-2 items-center gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
-              {enterpriseClientLogos.map((logo) => (
-                <div key={logo.src} className="flex h-12 items-center justify-center opacity-80 transition-opacity duration-200 hover:opacity-100">
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={160}
-                    height={46}
-                    className="h-9 w-auto object-contain"
-                  />
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>

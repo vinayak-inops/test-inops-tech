@@ -4,7 +4,7 @@ import { turnstilesFaqItems } from "@/app/lib/turnstilesFaqItems";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = routeMetadata({
-  title: "Turnstiles & Flap Barriers with Biometric Access Control | InOps",
+  title: "Turnstiles & Flap Barriers for Factories | Access Control",
   description:
     "Tripod turnstiles and flap barriers with biometric integration for factory gates — stainless steel, smooth throughput, and CLMS-connected access control for Indian industrial sites.",
   path: "/turnstiles-access",

@@ -2,7 +2,7 @@ import SolutionSchemaInjector from "@/app/components/SolutionSchemaInjector";
 import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "Delivery Management System | Last-Mile & Factory Dispatch Tracking";
+const PAGE_TITLE = "Delivery Management Software | Last-Mile & Dispatch | InOps";
 const PAGE_DESCRIPTION =
   "Real-time delivery tracking software for Indian manufacturers — route management, GPS tracking, proof of delivery, and dispatch analytics integrated with your factory operations.";
 

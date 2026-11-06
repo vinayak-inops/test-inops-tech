@@ -4,9 +4,8 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import "./home-visual.css";
-import HeroBackgroundSlider from "./components/HeroBackgroundSlider";
 import { AnimatedHeading, AnimatedParagraph, AnimatedSection } from "./components/AnimatedSection";
 import LazyInViewVideo from "./components/LazyInViewVideo";
 import { FlyInText } from "./components/FlyInText";
@@ -21,7 +20,7 @@ import type { VideoLivePopupItem } from "./components/VideoLivePopups";
 import ClientMarqueeLogo from "@/app/components/ClientMarqueeLogo";
 import { CLIENT_LOGO_MARQUEE_TRACK, industryLeaderClientLogos } from "@/app/lib/industryLeaderClientLogos";
 import { mediaVideos } from "@/app/lib/mediaAssets";
-import { heroSlides, whySectionCardImages } from "@/app/lib/serviceImagery";
+import { whySectionCardImages } from "@/app/lib/serviceImagery";
 import { TRUSTED_BY_HEADLINE } from "@/app/lib/trustedClients";
 import { inopsUi } from "@/app/lib/inopsUi";
 import { homeFaqItems } from "@/app/lib/homeFaqItems";
@@ -152,7 +151,7 @@ const whyCards: WhyCard[] = [
   {
     title: "Contract Workforce Governance",
     badge: "CLMS platform",
-    description:"Contract Workforce Governance",
+    description: "Contract Workforce Governance",
     imageUrl: whySectionCardImages[2],
     href: whyCardHrefByTitle["Contract Workforce Governance"],
     text: "Real-time dashboards for plant, HR, and leadership, so every team sees the same source of truth.",
@@ -161,7 +160,7 @@ const whyCards: WhyCard[] = [
   {
     title: "HRIS",
     badge: "HR platform",
-    description:" HR Information System",
+    description: "HR Information System",
     imageUrl: whySectionCardImages[1],
     href: whyCardHrefByTitle.HRIS,
     text: "Centralise attendance, shifts, compliance, and reporting so operations stays audit-ready without spreadsheets.",
@@ -170,7 +169,7 @@ const whyCards: WhyCard[] = [
   {
     title: "Identity Solution",
     badge: "Face + access",
-    description:"Identity Solution",
+    description: "Identity Solution",
     imageUrl: whySectionCardImages[0],
     href: whyCardHrefByTitle["Identity Solution"],
     text: "Cut queues and stop buddy punching with fast, accurate identity verification across devices and cameras.",
@@ -179,7 +178,7 @@ const whyCards: WhyCard[] = [
   {
     title: "Logistics Solutions",
     badge: "Logistics",
-    description:"Delivery Management Solution",
+    description: "Delivery Management Solution",
     imageUrl: whySectionCardImages[3],
     href: whyCardHrefByTitle["Logistics Solutions"],
     text: "Roll out across multiple sites with controls, logs, and workflows designed for large industrial operations.",
@@ -188,7 +187,7 @@ const whyCards: WhyCard[] = [
   {
     title: "EWA",
     badge: "EWA",
-    description:"Financial Wellness",
+    description: "Financial Wellness",
     imageUrl: whySectionCardImages[4],
     href: whyCardHrefByTitle.EWA,
     text: "Give employees flexible access to earned wages while keeping payroll controls and compliance intact.",
@@ -215,7 +214,6 @@ function buildWhyOrder(featuredTitle = defaultWhyFeaturedTitle) {
 }
 
 export default function Home() {
-  const [heroDarkPhase, setHeroDarkPhase] = useState(true);
   const [whyOrder, setWhyOrder] = useState(() => buildWhyOrder());
   const selectedWhyCard = whyCards.find((c) => c.title === whyOrder[0]) ?? whyCards[0];
 
@@ -229,10 +227,6 @@ export default function Home() {
       return next;
     });
   };
-  const [activeHeroIndex, setActiveHeroIndex] = useState(0);
-  const activeHeroSlide = heroSlides[activeHeroIndex];
-  const activeHeroSolutionHref = activeHeroSlide?.solutionHref ?? "/contract-labour-management";
-
   return (
     <div className="home-page home-section-gap relative min-h-screen bg-white text-gray-900 perspective-page">
       {/* Hero: on home, navbar is static above this block; after hero, navbar is fixed + white */}
@@ -266,135 +260,66 @@ export default function Home() {
             }}
             aria-hidden
           />
-          <HeroBackgroundSlider onPhaseChange={setHeroDarkPhase} onSlideChange={setActiveHeroIndex} />
+          {/* Static hero background */}
+          <div className="absolute inset-0 overflow-hidden bg-zinc-950">
+            <Image
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1280&q=75"
+              alt="Operations team reviewing contract workforce compliance and CLMS dashboards in an enterprise control room"
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+              priority
+            />
+          </div>
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/48" aria-hidden />
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_95%_65%_at_50%_18%,rgba(56,189,248,0.22),transparent_58%)]" aria-hidden />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-900/25 via-transparent to-cyan-500/15" aria-hidden />
           <div className="relative z-[1] mx-auto flex min-h-[calc(100svh-var(--home-nav-offset))] w-full max-w-5xl flex-col items-center justify-center px-5 pb-16 text-center sm:px-8 sm:pb-24 lg:px-12">
             <motion.div
               className="flex flex-col items-center"
-              initial={false}
-              animate={{
-                opacity: heroDarkPhase ? 0 : 1,
-                y: heroDarkPhase ? 16 : 0,
-              }}
-              transition={{
-                duration: 0.5,
-                ease: [0.33, 1, 0.68, 1],
-              }}
-              style={{ pointerEvents: heroDarkPhase ? "none" : "auto" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, ease: [0.33, 1, 0.68, 1] }}
             >
-              <motion.div
-                className="flex flex-col items-center"
-                initial={false}
-                animate={heroDarkPhase ? "hidden" : "visible"}
-                variants={{
-                  visible: {
-                    transition: { staggerChildren: 0.08, delayChildren: 0.05 },
-                  },
-                  hidden: {
-                    transition: { staggerChildren: 0.03, staggerDirection: -1 },
-                  },
-                }}
-              >
-                {/* <motion.div variants={{ visible: { opacity: 1, y: 0 }, hidden: { opacity: 0, y: 12 } }} transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}>
-                  <span className="inline-flex max-w-[min(100%,22rem)] items-center gap-2 rounded-full border border-white/20 bg-white/[0.08] px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-[0.18em] text-white/95 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)] backdrop-blur-md sm:max-w-none sm:px-5 sm:tracking-[0.22em] sm:text-xs">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.7)]" aria-hidden />
-                    Contract Labour Management
-                  </span>
-                </motion.div> */}
-                <motion.div
-                  variants={{ visible: { opacity: 1, y: 0 }, hidden: { opacity: 0, y: 40 } }}
-                  transition={{ duration: 0.65, ease: [0.33, 1, 0.68, 1] }}
-                  className="relative mt-7 sm:mt-8"
-                >
-                  <div
-                    className="home-hero__glow-pulse pointer-events-none absolute left-1/2 top-1/2 h-[130%] w-[min(120%,42rem)] -translate-x-1/2 -translate-y-1/2 rounded-[3rem] bg-gradient-to-r from-blue-500/45 via-cyan-400/35 to-blue-600/40 blur-[56px]"
-                    aria-hidden
-                  />
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeHeroIndex}
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.45, ease: [0.33, 1, 0.68, 1] }}
-                      className="relative"
-                      aria-live="polite"
-                    >
-                      {activeHeroSlide?.layout === "legacy" ? (
-                        <h1 className="home-display-heading inops-type-hero relative mx-auto max-w-[min(100%,44rem)] bg-gradient-to-br from-white via-sky-100 to-cyan-100 bg-clip-text px-2 font-heading-bold text-transparent drop-shadow-[0_2px_14px_rgba(0,0,0,0.42)] lg:max-w-[58rem] antialiased">
-                          {activeHeroSlide.headline}
-                        </h1>
-                      ) : activeHeroSlide?.layout === "seo-stack" ? (
-                        <>
-                          <div className="home-hero-font">
-                            <h1
-                            className={`home-hero-font home-hero-seo-h1  relative mx-auto px-2 antialiased${
-                              activeHeroSlide.seoHeadingVariant === "line"
-                                ? " home-hero-seo-h1--line"
-                                : " home-hero-seo-h1--tag max-w-[min(100%,36rem)]"
-                            }`}
-                          >{activeHeroSlide.seoHeading}</h1>
-                          </div>
-                          <h2 className="home-display-heading inops-type-hero relative mx-auto mt-2 max-w-[min(100%,44rem)] bg-gradient-to-br from-white via-sky-100 to-cyan-100 bg-clip-text px-2 font-heading-bold text-transparent drop-shadow-[0_2px_14px_rgba(0,0,0,0.42)] sm:mt-3 lg:max-w-[58rem] antialiased">
-                            {activeHeroSlide.headline}
-                          </h2>
-                          {activeHeroSlide.subheadline ? (
-                            <h3 className="home-hero-support-line home-display-heading mt-4 sm:mt-5">
-                              {activeHeroSlide.subheadline}
-                            </h3>
-                          ) : null}
-                        </>
-                      ) : null}
-                    </motion.div>
-                  </AnimatePresence>
-                </motion.div>
-                
-                <motion.p
-                  variants={{ visible: { opacity: 1, y: 0 }, hidden: { opacity: 0, y: 20 } }}
-                  transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: 0.04 }}
-                  className="mx-auto mt-5 max-w-xl px-2 text-center text-sm leading-relaxed text-white/80 sm:mt-6 sm:text-base"
-                >
-                  InOps is a Bengaluru company that builds contract labour management (CLMS), biometric attendance and compliance systems for Indian manufacturing, defence and infrastructure plants. Since 2014 we have managed 3,000+ attendance devices across 70+ sites, connecting the factory gate to payroll and statutory registers on one platform.
-                </motion.p>
-                <motion.div
-                  variants={{ visible: { opacity: 1, y: 0 }, hidden: { opacity: 0, y: 28 } }}
-                  transition={{ duration: 0.58, ease: [0.33, 1, 0.68, 1], delay: 0.05 }}
-                  className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-11 sm:w-auto sm:flex-row sm:items-center sm:gap-4"
-                >
-                  <motion.div whileHover={{ scale: 1.04, y: -4 }} whileTap={{ scale: 0.98 }}>
-                    <Link
-                      href="/contact"
-                      className={`${inopsUi.btnPrimary} w-full shadow-lg shadow-blue-900/25 sm:w-auto`}
-                    >
-                      Get In Touch
-                      
-                    </Link>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.04, y: -4 }} whileTap={{ scale: 0.98 }}>
-                    <Link
-                      href={activeHeroSolutionHref}
-                      className={`${inopsUi.btnGhostDark} w-full sm:w-auto`}
-                    >
-                      Our Solutions
-                    </Link>
-                  </motion.div>
-                </motion.div>
+              <div className="relative mt-7 sm:mt-8">
+                <div
+                  className="home-hero__glow-pulse pointer-events-none absolute left-1/2 top-1/2 h-[130%] w-[min(120%,42rem)] -translate-x-1/2 -translate-y-1/2 rounded-[3rem] bg-gradient-to-r from-blue-500/45 via-cyan-400/35 to-blue-600/40 blur-[56px]"
+                  aria-hidden
+                />
+                <div className="home-hero-font">
+                  <h1 className="home-hero-font home-hero-seo-h1 home-hero-seo-h1--line relative mx-auto px-2 antialiased">
+                    Contract Workforce Governance, CLMS &amp; Biometric Attendance
+                  </h1>
+                </div>
+                <h2 className="home-display-heading inops-type-hero relative mx-auto mt-2 max-w-[min(100%,44rem)] bg-gradient-to-br from-white via-sky-100 to-cyan-100 bg-clip-text px-2 font-heading-bold text-transparent drop-shadow-[0_2px_14px_rgba(0,0,0,0.42)] sm:mt-3 lg:max-w-[58rem] antialiased">
+                  India&apos;s Contract Workforce Compliance Platform
+                </h2>
+                <h3 className="home-hero-support-line home-display-heading mt-4 sm:mt-5">
+                  Single Source of Truth for Workforce Governance
+                </h3>
+              </div>
 
-                {/* <motion.div
-                  variants={{ visible: { opacity: 1, y: 0 }, hidden: { opacity: 0, y: 10 } }}
-                  transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1], delay: 0.04 }}
-                  className="mt-10 flex items-center justify-center gap-2 text-xs font-medium tracking-wide text-white/70 sm:mt-11"
-                >
-                  <span className="h-1 w-10 rounded-full bg-white/15" aria-hidden />
-                  <span>Scroll to explore</span>
-                  <svg className="h-4 w-4 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M12 5v14" />
-                    <path d="M19 12l-7 7-7-7" />
-                  </svg>
-                </motion.div> */}
-              </motion.div>
+              <p className="mx-auto mt-5 max-w-xl px-2 text-center text-sm leading-relaxed text-white/80 sm:mt-6 sm:text-base">
+                InOps is a Bengaluru company that builds contract labour management (CLMS), biometric attendance and compliance systems for Indian manufacturing, defence and infrastructure plants. Since 2014 we have managed 3,000+ attendance devices across 70+ sites, connecting the factory gate to payroll and statutory registers on one platform.
+              </p>
+              <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-11 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
+                <motion.div whileHover={{ scale: 1.04, y: -4 }} whileTap={{ scale: 0.98 }}>
+                  <Link
+                    href="/contact"
+                    className={`${inopsUi.btnPrimary} w-full shadow-lg shadow-blue-900/25 sm:w-auto`}
+                  >
+                    Get In Touch
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.04, y: -4 }} whileTap={{ scale: 0.98 }}>
+                  <Link
+                    href="/contract-labour-management"
+                    className={`${inopsUi.btnGhostDark} w-full sm:w-auto`}
+                  >
+                    Our Solutions
+                  </Link>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -425,7 +350,7 @@ export default function Home() {
           >
             <div className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-12 bg-gradient-to-r from-white via-white/90 to-transparent" aria-hidden />
             <div className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-12 bg-gradient-to-l from-white via-white/90 to-transparent" aria-hidden />
-            <div className={`brand-marquee-group relative ${CLIENT_LOGO_MARQUEE_TRACK} motion-reduce:overflow-x-auto`}>
+            <div className={`brand-marquee-group relative pl-4 sm:pl-6 lg:pl-12 ${CLIENT_LOGO_MARQUEE_TRACK} motion-reduce:overflow-x-auto`}>
               <div
                 className={`brand-marquee-track ${CLIENT_LOGO_MARQUEE_TRACK} animate-marquee motion-reduce:animate-none`}
                 role="list"
@@ -445,6 +370,17 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+          <div className="mt-4 pb-3 text-center">
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition hover:text-[color:var(--inops-blue)]"
+            >
+              Customer stories
+              <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m0 0l-6-6m6 6l-6 6" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -629,7 +565,7 @@ export default function Home() {
                       <button
                         type="button"
                         onClick={() => swapFeaturedWith(card.title)}
-                        className="h-full w-full p-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:p-5"
+                        className="h-full w-full p-4 pb-10 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:p-5 sm:pb-11"
                         aria-label={`Show ${card.title}`}
                       >
                         <div className="flex h-full gap-3 sm:gap-3.5">

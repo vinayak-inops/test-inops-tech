@@ -3,7 +3,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import { biometricDatabaseAuditFaqItems } from "@/app/lib/biometricDatabaseAuditFaqItems";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "Biometric Database Audit for Industrial Plants | Ghost Employee & Payroll Leakage Detection — InOps";
+const PAGE_TITLE = "Biometric Database Audit | Ghost Employee Detection | InOps";
 const PAGE_DESCRIPTION =
   "Biometric database audit service built for ghost employee detection, duplicate biometric cleanup and payroll leakage prevention across industrial plants, warehouses and multi-site environments.";
 

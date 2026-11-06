@@ -109,10 +109,17 @@ export default function AccessoriesPage() {
     <>
       <div className="solution-product-section-gap min-h-screen bg-white text-gray-900">
         <SolutionLandingHero
-          title="Access Control Accessories: Exit Buttons, RF Cards & Electromagnetic Locks for Factory Gates"
+          badge={
+            <span className="inline-flex rounded-full border border-blue-200/90 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-blue-800 shadow-sm backdrop-blur-sm">
+              Access Control Accessories
+            </span>
+          }
+          title="Access Control Accessories for Factory Gates"
           subtitle="Exit buttons, fingerprint sensors, RF cards, and electromagnetic locks — everything you need to complete turnstile lanes, doors, and secure zones at industrial and commercial sites."
-          imageSrc="/images/solution-hero-clms-worker.png"
+          imageSrc="/images/clms-hardware-governance.png"
           imageAlt="Industrial site operations ,  access hardware and workforce context"
+          primaryCta={{ label: "Get a Quote", href: "/contact" }}
+          secondaryCta={{ label: "Browse Devices", href: "/biometric-devices" }}
         />
 
         {/* Main content – section title + two products */}

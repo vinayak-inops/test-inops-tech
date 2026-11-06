@@ -27,12 +27,15 @@ const heroData = {
   bgImageAlt: "Warehouse worker reviewing the order management dashboard",
   bgPosition: "72% 40%",
   gradientCenter: "18% 22%",
-  eyebrow: "InOps · Industrial Operations",
-  titleLine1: "Order Management for Manufacturing",
-  titleLine2: "& Industrial Supply Chains",
+  eyebrow: "InOps",
+  titleLine1: "Order Management System",
+  titleLine2: "for Manufacturers",
   description:
     "InOps OMS captures, validates, and routes production orders, dispatch notes, and customer fulfilment across your plant and warehouse network — connected to the same workforce-compliance layer as InOps CLMS and HRIS.",
-  buttons: [{ label: "Request Demo", href: "/contact", variant: "primary" as const }],
+  buttons: [
+    { label: "Book a Demo", href: "/contact", variant: "primary" as const },
+    { label: "See Features", href: "#order-features", variant: "outline" as const },
+  ],
 };
 
 
@@ -198,7 +201,7 @@ export default function OrdersPage() {
     <main>
       <HeroSection {...heroData} />
       <PainPointsSection {...painData} />
-      <FeaturesSection {...featuresData} />
+      <FeaturesSection {...featuresData} id="order-features" />
       <LifecycleSection {...lifecycleData} variant="boxed" />
       <StatsBar {...statsData} />
 

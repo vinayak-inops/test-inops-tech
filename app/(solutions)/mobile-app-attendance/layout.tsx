@@ -3,7 +3,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = routeMetadata({
-  title: "Mobile Attendance & Workforce App | Face Recognition on Mobile — InOps",
+  title: "Mobile Attendance App with Face Recognition & GPS | InOps",
   description:
     "Mobile attendance with face recognition for contract workers: GPS-validated check-in, earned wage access, leave management, and self-service — no fixed biometric hardware needed.",
   path: "/mobile-app-attendance",

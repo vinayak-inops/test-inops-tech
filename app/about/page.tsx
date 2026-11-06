@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import AnimatedCounter from "../components/AnimatedCounter";
@@ -335,9 +336,8 @@ export default function AboutPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.55, ease: smoothEase, delay: 0.12 }}
                   >
-                    InOps:{" "}
-                    <span className="text-[color:var(--inops-blue)]">Bengaluru-Based Workforce Compliance Technology</span>{" "}
-                    for Indian Manufacturing, Defence &amp; Infrastructure.
+                    About InOps:{" "}
+                    <span className="text-[color:var(--inops-blue)]">Workforce Compliance Technology Since 2014</span>
                   </motion.h1>
                   <motion.p
                     className={`${aboutLead} mt-4 max-w-xl`}
@@ -345,16 +345,21 @@ export default function AboutPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: smoothEase, delay: 0.18 }}
                   >
-                    InOps IT Solutions Pvt. Ltd. is a Bengaluru-based workforce compliance technology company founded in 2014. We build and support contract labour management, biometric attendance, HRIS and compliance systems for Indian manufacturing, defence and infrastructure enterprises, and manage 3,000+ devices across 70+ sites.
+                    InOps IT Solutions Pvt. Ltd. is a Bengaluru-based workforce compliance technology company founded in 2014. We build and support <Link href="/contract-labour-management" className="underline font-medium hover:opacity-75">contract labour management</Link>, biometric attendance, HRIS and compliance systems for Indian manufacturing, defence and infrastructure enterprises, and manage 3,000+ devices across 70+ sites.
                   </motion.p>
-                  <motion.p
-                    className={`${aboutLead} mt-3 max-w-xl`}
+                  <motion.div
+                    className="mt-6 flex flex-wrap items-center gap-3 sm:mt-7"
                     initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: smoothEase, delay: 0.24 }}
                   >
-                    Founded in 2014, InOps unifies attendance, compliance, and Contract Labour Management — gate biometrics to finance close — for industrial operators across India.
-                  </motion.p>
+                    <Link href="/contact" className="inops-btn-primary inline-flex items-center gap-2 rounded-xl bg-[color:var(--inops-blue)] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 active:scale-95">
+                      Book a Demo
+                    </Link>
+                    <Link href="/contact" className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 active:scale-95">
+                      Contact Us
+                    </Link>
+                  </motion.div>
                 </div>
               </div>
             </div>
@@ -723,8 +728,7 @@ export default function AboutPage() {
               className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-7"
               variants={visionMissionCards}
               initial="hidden"
-              whileInView="visible"
-              viewport={viewport}
+              animate="visible"
             >
               <motion.article
                 variants={visionMissionCardItem}

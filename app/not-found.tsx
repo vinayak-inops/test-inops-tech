@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="mx-auto flex min-h-[50vh] max-w-2xl flex-col items-center justify-center px-6 py-24 text-center">
+    <div className="mx-auto flex min-h-[50vh] max-w-2xl flex-col items-center justify-center px-6 py-24 text-center" style={{ paddingTop: "calc(var(--home-nav-offset,4.5rem) + 6rem)" }}>
       <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">404</p>
       <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Page not found</h1>
       <p className="mt-4 text-slate-600">

@@ -453,7 +453,7 @@ export default function TimeAndAttendancePage() {
                     className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/85 px-3.5 py-1.5 text-xs font-semibold text-blue-700 shadow-sm backdrop-blur"
                   >
                     <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden />
-                    CCTV based attendance solution
+                    CCTV Attendance
                   </FlyInText>
                   <FlyInText
                     as="h1"
@@ -463,7 +463,7 @@ export default function TimeAndAttendancePage() {
                     duration={0.68}
                     className="home-display-heading inops-type-hero mt-4 text-slate-900 sm:mt-5"
                   >
-                    CCTV-Based Attendance: Turn Existing Cameras into an AI Attendance System
+                    CCTV Attendance System Using Your Existing Cameras
                   </FlyInText>
                   <FlyInText
                     as="p"
@@ -487,7 +487,13 @@ export default function TimeAndAttendancePage() {
                       href="/contact"
                       className="inline-flex items-center justify-center rounded-full bg-blue-700 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-sky-500/30"
                     >
-                      Get In Touch
+                      Book a Demo
+                    </Link>
+                    <Link
+                      href="#cctv-how-it-works"
+                      className="inline-flex items-center justify-center rounded-full border border-blue-200 bg-white px-7 py-3 text-sm font-semibold text-blue-800 shadow-sm transition hover:bg-blue-50"
+                    >
+                      See How It Works
                     </Link>
                   </FlyInText>
                 </div>
@@ -622,7 +628,7 @@ export default function TimeAndAttendancePage() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden border-b border-slate-200/70 bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 py-10 lg:py-16">
+        <section id="cctv-how-it-works" className="relative overflow-hidden border-b border-slate-200/70 bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 py-10 lg:py-16">
           <div className="pointer-events-none absolute inset-0 bg-dot-grid-subtle opacity-[0.25]" aria-hidden />
           <div
             className="pointer-events-none absolute -left-24 top-16 h-72 w-72 rounded-full bg-gradient-to-br from-blue-500/15 via-sky-400/10 to-transparent blur-3xl"

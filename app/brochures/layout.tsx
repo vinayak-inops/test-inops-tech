@@ -3,7 +3,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = routeMetadata({
-  title: "Product & Solution Brochures — Contract Labour Compliance, Biometric Attendance & HRIS | InOps",
+  title: "Product Brochures | CLMS, Biometric Attendance, HRIS | InOps",
   description:
     "Download PDF brochures for contract labour management (CLMS), biometric attendance, visitor management, HRIS, canteen systems, and fixed asset management — resources for Indian manufacturers and HR teams.",
   path: "/brochures",

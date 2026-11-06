@@ -6,6 +6,15 @@ import { motion } from "framer-motion";
 import { FlyInText } from "@/app/components/FlyInText";
 import { inopsUi } from "@/app/lib/inopsUi";
 
+function trackBrochureDownload(slug: string, title: string) {
+  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+  gtag?.("event", "file_download", {
+    file_name: `${slug}.pdf`,
+    link_url: `/brochures/files/${slug}.pdf`,
+    brochure_title: title,
+  });
+}
+
 const smoothEase = [0.33, 1, 0.68, 1] as const;
 const viewport = { once: true, amount: 0.15 };
 
@@ -14,7 +23,9 @@ const brochures = [
     title: "Biometric Attendance & Access Control for Factories",
     description: "Fingerprint and face recognition terminals, turnstiles, and fleet management — how InOps covers every gate from enrolment to shift-close. Includes device selection guide for Indian industrial sites.",
     category: "Product",
-    href: "/biometric-devices",
+    productHref: "/biometric-devices",
+    pdfSlug: "biometric-attendance-access-control",
+    // TODO: replace with actual brochure cover thumbnail, e.g. "/images/brochures/biometric-attendance-cover.jpg"
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=85",
     accent: "Biometrics",
   },
@@ -22,7 +33,9 @@ const brochures = [
     title: "Contract Labour Management System (CLMS)",
     description: "Gate compliance, CLRA statutory registers, contractor invoice reconciliation, and multi-site visibility — the full lifecycle for contract workforces at Indian manufacturing plants.",
     category: "Solutions",
-    href: "/contract-labour-management",
+    productHref: "/contract-labour-management",
+    pdfSlug: "contract-labour-management-clms",
+    // TODO: replace with actual brochure cover thumbnail, e.g. "/images/brochures/clms-cover.jpg"
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=85",
     accent: "CLMS",
   },
@@ -30,7 +43,10 @@ const brochures = [
     title: "Visitor Management System for Industrial Sites",
     description: "Pre-registration, watchlist screening, zone-limited passes, and kiosk self-check-in. How InOps replaces the paper register with an audit-ready visitor control layer.",
     category: "Solutions",
-    href: "/visitor-management",
+    // Points to canteen-and-visitor until a standalone /visitor-management page is published
+    productHref: "/canteen-and-visitor",
+    pdfSlug: "visitor-management-industrial-sites",
+    // TODO: replace with actual brochure cover thumbnail, e.g. "/images/brochures/visitor-management-cover.jpg"
     image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85",
     accent: "Access",
   },
@@ -38,7 +54,9 @@ const brochures = [
     title: "Canteen Management & Cashless Meal Systems",
     description: "Biometric or RFID meal booking, cashless payment, subsidy management, and consumption analytics — integrated with attendance so deductions happen automatically.",
     category: "Solutions",
-    href: "/canteen-and-visitor",
+    productHref: "/canteen-and-visitor",
+    pdfSlug: "canteen-management-cashless-meals",
+    // TODO: replace with actual brochure cover thumbnail, e.g. "/images/brochures/canteen-management-cover.jpg"
     image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=85",
     accent: "Canteen",
   },
@@ -46,7 +64,9 @@ const brochures = [
     title: "HRIS & Payroll Compliance for Manufacturing",
     description: "Permanent-employee HRIS with PF, ESI, and LWF statutory outputs, leave management, and payslip generation — designed to run alongside CLMS for a unified workforce view.",
     category: "Solutions",
-    href: "/hris",
+    productHref: "/hris",
+    pdfSlug: "hris-payroll-compliance-manufacturing",
+    // TODO: replace with actual brochure cover thumbnail, e.g. "/images/brochures/hris-cover.jpg"
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=85",
     accent: "HRIS",
   },
@@ -54,11 +74,13 @@ const brochures = [
     title: "Fixed Asset Register & Lifecycle Tracking",
     description: "Asset tagging, depreciation schedules, maintenance records, and disposal management — giving finance and operations a single source of truth across multi-plant estates.",
     category: "Solutions",
-    href: "/fixed-asset-management",
+    productHref: "/fixed-asset-management",
+    pdfSlug: "fixed-asset-register-lifecycle-tracking",
+    // TODO: replace with actual brochure cover thumbnail, e.g. "/images/brochures/fixed-assets-cover.jpg"
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=85",
     accent: "Assets",
   },
-] as const;
+];
 
 const brochureBanner = {
   src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1920&q=85",
@@ -97,6 +119,13 @@ export default function BrochuresPage() {
 
       <section className="relative z-[1] px-4 pb-12 pt-24 sm:px-6 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-28">
         <div className="mx-auto max-w-7xl">
+          <nav aria-label="Breadcrumb" className="mb-4 text-sm text-slate-500">
+            <Link href="/" className="hover:text-slate-700">Home</Link>
+            <span aria-hidden> / </span>
+            <Link href="/blog" className="hover:text-slate-700">Resources</Link>
+            <span aria-hidden> / </span>
+            <span aria-current="page">Brochures</span>
+          </nav>
           <motion.header
             className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 text-center"
             initial={{ opacity: 0, y: 20 }}
@@ -121,7 +150,7 @@ export default function BrochuresPage() {
                 <div className="absolute inset-0 flex flex-col items-center justify-center px-6 py-5 sm:py-6">
                   <p className={inopsUi.heroKicker}>Brochures</p>
                   <h1 className="home-display-heading inops-type-hero mt-4 text-white text-center">
-                    Product &amp; Solution Brochures for Contract Labour Compliance, Biometric Attendance &amp; HRIS
+                    Product Brochures: CLMS, Biometric Attendance &amp; HRIS
                   </h1>
                   <p className={`${inopsUi.heroBannerDesc} mt-3 max-w-xl text-center`}>{brochureBanner.tagline}</p>
                 </div>
@@ -193,14 +222,16 @@ export default function BrochuresPage() {
                   </FlyInText>
                   <FlyInText as="div" direction="up" delay={0.16 + i * 0.04} className="mt-6 flex flex-col gap-2">
                     <a
-                      href="#"
+                      href={`/brochures/files/${brochure.pdfSlug}.pdf`}
+                      download
+                      onClick={() => trackBrochureDownload(brochure.pdfSlug, brochure.title)}
                       className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--inops-navy)] px-5 py-3 text-sm font-semibold text-white shadow-xl shadow-slate-900/15 transition hover:bg-[var(--inops-blue)] hover:shadow-blue-600/25"
                     >
                       <DownloadIcon className="h-4 w-4" />
                       Download PDF
                     </a>
                     <Link
-                      href={brochure.href}
+                      href={brochure.productHref}
                       className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 px-5 py-2.5 text-sm font-semibold text-[var(--inops-blue)] transition hover:border-[var(--inops-blue)] hover:bg-blue-50"
                     >
                       View product page

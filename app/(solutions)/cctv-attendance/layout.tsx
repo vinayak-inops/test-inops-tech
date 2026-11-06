@@ -3,7 +3,7 @@ import FAQPageJsonLd from "@/app/components/FAQPageJsonLd";
 import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "CCTV Attendance System | Camera-Based Attendance for Factory Sites — InOps";
+const PAGE_TITLE = "CCTV Attendance System | AI Face Recognition on IP Cameras";
 const PAGE_DESCRIPTION =
   "CCTV attendance system for Indian factories: use existing IP cameras for face recognition attendance alongside biometric terminals. Supports CLMS, CLRA compliance, and contractor billing verification.";
 

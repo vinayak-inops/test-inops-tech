@@ -1241,7 +1241,9 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Why contract labour needs a different model",
-        paragraphs: [],
+        paragraphs: [
+          'The principal employer\'s <a href="/contract-labour-management" class="text-blue-600 underline">contract labour management system (CLMS)</a> is the source of verified attendance data — which is why EWA for contract workers depends on the same gate records that drive payroll and compliance.',
+        ],
         list: [
           "Payroll sits with the contractor. The principal employer does not pay contract workers directly.",
           "Attendance sits with the site. Biometric devices and the CLMS at the principal employer's site record attendance.",
@@ -3784,7 +3786,7 @@ export const blogPosts: BlogPost[] = [
     {
       "heading": "Attendance Software vs. CLMS vs. HRIS: What's the Difference?",
       "paragraphs": [
-        "Three product categories overlap in this space, and buyers often conflate them. The table below shows where each starts and stops — which matters because an HRMS vendor adding a \"contractor module\" is solving a different problem than a purpose-built contract labour management system."
+        "Three product categories overlap in this space, and buyers often conflate them. The table below shows where each starts and stops — which matters because an HRMS vendor adding a \"contractor module\" is solving a different problem than a purpose-built <a href=\"/contract-labour-management\" class=\"text-blue-600 underline\">contract labour management system</a>."
       ],
       "table": {
         "headers": ["", "Attendance software", "CLMS", "HRIS / HRMS"],
@@ -4013,7 +4015,7 @@ export const blogPosts: BlogPost[] = [
       "heading": "What happens when a licence lapses",
       "paragraphs": [
         "A lapsed CLRA licence means every worker that contractor deploys is, from that point, unlicensed labour on the principal employer's premises. The practical response is to block further gate entry for that contractor's workers until the licence is renewed and verified — which requires the licence status to be checked at the gate, not just filed away in a folder. The rules governing <a href=\"/blog/factory-gate-entry-rules-contract-workers\" class=\"text-blue-600 underline\">factory gate entry for contract workers</a> explain what that gate check should actually include.",
-        "Related reading: <a href=\"/blog/what-is-contract-labour-management-system\" class=\"text-blue-600 underline\">What is a Contract Labour Management System (CLMS)?</a> covers how a CLMS automates the licence tracking, register maintenance and principal-employer obligations described in this guide — and <a href=\"/blog/factory-gate-entry-rules-contract-workers\" class=\"text-blue-600 underline\">Factory Gate Entry Rules for Contract Workers</a> covers what the gate itself should enforce when a contractor's status changes."
+        "Related reading: <a href=\"/blog/what-is-contract-labour-management-system\" class=\"text-blue-600 underline\">What is a Contract Labour Management System (CLMS)?</a> covers how a CLMS automates the licence tracking, register maintenance and principal-employer obligations described in this guide. For the purpose-built <a href=\"/contract-labour-management\" class=\"text-blue-600 underline\">CLMS software</a> that implements these controls in Indian manufacturing, see Iddion RegX. <a href=\"/blog/factory-gate-entry-rules-contract-workers\" class=\"text-blue-600 underline\">Factory Gate Entry Rules for Contract Workers</a> covers what the gate itself should enforce when a contractor's status changes."
       ]
     }
   ],
@@ -4336,7 +4338,7 @@ export const blogPosts: BlogPost[] = [
 },
   {
     slug: "what-is-contract-labour-management-system",
-    title: "CLMS Full Form & Meaning: What a CLMS Does | InOps",
+    title: "CLMS Full Form & Meaning: What a CLMS Does",
     h1: "CLMS Full Form and Meaning: What a CLMS Does",
     description:
       "CLMS stands for Contract Labour Management System: software that runs contract workers from gate to payroll and keeps CLRA registers audit-ready.",
@@ -4360,6 +4362,11 @@ export const blogPosts: BlogPost[] = [
           "A contract labour management system (CLMS) is software that governs the entire lifecycle of contract workers at an industrial establishment: onboarding and verification, gate entry and compliance enforcement, biometric attendance, statutory registers under the Contract Labour (Regulation &amp; Abolition) Act, contractor payroll, and invoice reconciliation. It exists because contract workers are not employees — they are supplied by third-party contractors, governed by different law, and invisible to the HR systems built for permanent staff.",
           "For a plant running 2,000 contract workers across 30 contractors, this is not a convenience problem. It is the difference between knowing who is on site and hoping the contractor's register is accurate.",
           'InOps\' CLMS is <a href="/contract-labour-management" class="underline font-medium hover:opacity-75">Iddion RegX</a> — built specifically for Indian manufacturing, infrastructure and defence establishments. Each section of this guide maps to a module in Iddion RegX, from gate compliance and biometric attendance through CLRA registers and contractor payroll.',
+        ],
+      },
+      {
+        paragraphs: [
+          '<div class="my-2 rounded-xl border border-blue-200 bg-blue-50/60 px-5 py-4"><p class="text-sm font-semibold text-slate-900">Looking for CLMS software for your plant?</p><p class="mt-1.5 text-sm text-slate-600">InOps Iddion RegX is built for Indian manufacturing — gate compliance, CLRA registers, contractor payroll, in one platform.</p><a href="/contract-labour-management" class="mt-3 inline-flex text-sm font-semibold text-blue-600 hover:text-blue-700">See Iddion RegX CLMS software →</a></div>',
         ],
       },
       {
@@ -4447,13 +4454,11 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What to look for when evaluating",
         paragraphs: [
-          "Questions that separate a real CLMS from an attendance system with contractor fields:",
-          "<strong>1. Can it block entry, or only report?</strong> Reporting tells you a licence lapsed. Enforcement stops the workers. The gap between the two is where inspection findings live.",
-          "<strong>2. Does it compute payroll from gate data or contractor submissions?</strong> If the contractor's roster is the input, the leakage stays.",
-          "<strong>3. Are registers generated from events, or uploaded?</strong> Most compliance failures are timing failures — records accurate on the day they were compiled and wrong by the day they were needed.",
-          "<strong>4. Does worker identity persist across contractors?</strong> If not, a blocked worker returns next month under a different vendor.",
-          "<strong>5. Does it handle mixed hardware and multiple sites?</strong> Plants buy devices over years from different suppliers. A system that only works with its own hardware forces a rip-and-replace.",
-          "<strong>6. What happens at offboarding?</strong> Ask specifically. It is the most commonly missing function.",
+          "Three questions that separate a real CLMS from an attendance system with contractor fields:",
+          "<strong>Can it block entry, or only report?</strong> Reporting tells you a licence lapsed. Enforcement stops the workers. The gap between the two is where inspection findings live.",
+          "<strong>Does it compute payroll from gate data or contractor submissions?</strong> If the contractor's roster is the input, the leakage stays.",
+          "<strong>Does worker identity persist across contractors?</strong> If not, a blocked worker returns next month under a different vendor.",
+          'See how <a href="/contract-labour-management" class="text-blue-600 underline">Iddion RegX CLMS</a> handles all three.',
         ],
       },
       {
@@ -4471,7 +4476,12 @@ export const blogPosts: BlogPost[] = [
           '<a href="/blog/factory-gate-entry-rules-contract-workers" class="text-blue-600 underline">Factory gate entry rules for contract workers</a> — the 19 checks that should run before a worker enters, and how to score your own gate.',
           '<a href="/blog/vendor-management-contractors-manufacturing" class="text-blue-600 underline">Vendor management for contractors in manufacturing</a> — licences, document currency, headcount caps and principal-employer liability.',
           '<a href="/blog/clra-compliance-checklist-india-2026" class="text-blue-600 underline">CLRA compliance checklist</a> — the full register, licence and statutory-return checklist for a principal employer.',
-          '<a href="/contract-labour-management" class="text-blue-600 underline">Labour management system software: a complete guide</a> — how a CLMS fits into the broader labour management stack covering permanent and contract workers together.',
+          '<a href="/contract-labour-management" class="text-blue-600 underline">Contract labour management system (CLMS) software</a> — how a CLMS fits into the broader labour management stack covering permanent and contract workers together.',
+        ],
+      },
+      {
+        paragraphs: [
+          '<div class="my-2 rounded-xl border border-blue-200 bg-blue-50/60 px-5 py-4"><p class="text-sm font-semibold text-slate-900">Ready to evaluate CLMS software?</p><p class="mt-1.5 text-sm text-slate-600">Iddion RegX covers every capability described in this guide — gate enforcement, CLRA registers, biometric attendance, contractor payroll and invoice reconciliation — purpose-built for Indian manufacturing.</p><a href="/contract-labour-management" class="mt-3 inline-flex text-sm font-semibold text-blue-600 hover:text-blue-700">Explore Iddion RegX →</a></div>',
         ],
       },
       {
@@ -5375,7 +5385,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "How software automates Form V and Form XIII compliance",
         paragraphs: [
-          "InOps CLMS gates gate access on contractor document status. A contractor cannot onboard workers to a site until their CLRA licence is verified in the system, their Form V is generated and digitally acknowledged, and their Form XIII entry is created and current. The system prevents the most common failure mode — deployment before documentation — by design.",
+          '<a href="/contract-labour-management" class="text-blue-600 underline">Iddion RegX CLMS</a> gates gate access on contractor document status. A contractor cannot onboard workers to a site until their CLRA licence is verified in the system, their Form V is generated and digitally acknowledged, and their Form XIII entry is created and current. The system prevents the most common failure mode — deployment before documentation — by design.',
           "At any point, the principal employer can generate a current Form XIII export for any establishment showing all active and historical contractor records, ready for an inspector visit. Form V and Form XIII are two of the 12 requirements in the <a href=\"/blog/clra-compliance-checklist-india-2026\" class=\"text-blue-600 underline\">CLRA Compliance Checklist (2026)</a> — see that guide for the full set of principal employer obligations.",
         ],
       },

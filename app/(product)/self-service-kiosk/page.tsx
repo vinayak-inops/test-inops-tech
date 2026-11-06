@@ -269,7 +269,7 @@ export default function SelfServiceKioskPage() {
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-40" aria-hidden />
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.7)]" aria-hidden />
                     </span>
-                    Employee self service · Kiosk · Mobile · Web
+                    Employee Self-Service
                   </span>
                 </motion.div>
 
@@ -279,9 +279,9 @@ export default function SelfServiceKioskPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.55, ease: smoothEase, delay: 0.1 }}
                 >
-                  Employee Self Service for{" "}
+                  Employee Self-Service Kiosk{" "}
                   <span className="font-semibold text-[color:var(--inops-blue)]">
-                    Factory Workforces
+                    for Factory Workers
                   </span>
                 </motion.h1>
 
@@ -304,13 +304,13 @@ export default function SelfServiceKioskPage() {
                     href="/contact"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white shadow-md shadow-blue-600/30 transition hover:bg-blue-700 hover:-translate-y-0.5"
                   >
-                    Request a demo
+                    Get a Quote
                   </Link>
                   <Link
                     href="/hris"
                     className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-blue-600 bg-white px-8 py-3.5 text-sm font-semibold text-blue-700 transition hover:bg-blue-50"
                   >
-                    HRIS overview
+                    See HRIS
                   </Link>
                 </motion.div>
               </div>

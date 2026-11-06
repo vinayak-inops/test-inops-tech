@@ -42,6 +42,8 @@ const routes: { path: string; priority: number; changeFrequency: ChangeFreq }[] 
   { path: "/glossary", priority: 0.55, changeFrequency: "monthly" },
   { path: "/clms-pricing", priority: 0.6, changeFrequency: "monthly" },
   { path: "/research-insights", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/case-studies", priority: 0.65, changeFrequency: "monthly" },
+  { path: "/case-studies/automotive-oem-multi-plant-clms", priority: 0.7, changeFrequency: "monthly" },
 ];
 
 

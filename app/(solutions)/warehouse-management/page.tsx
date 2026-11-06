@@ -27,13 +27,14 @@ const heroData = {
   bgImageAlt: "Warehouse manager reviewing inventory data on a laptop",
   bgPosition: "72% 40%",
   gradientCenter: "28% 22%",
-  eyebrow: "Logistics Excellence",
-  titleLine1: "Warehouse Management",
-  titleLine2: "Solution",
+  eyebrow: "InOps",
+  titleLine1: "Warehouse Management System",
+  titleLine2: "for Factories",
   description:
     "Real-time inventory visibility, efficient operational orchestration and predictive analytics designed for high-throughput modern warehouses.",
   buttons: [
-    { label: "Request Demo", href: "/contact", variant: "primary" as const },
+    { label: "Book a Demo", href: "/contact", variant: "primary" as const },
+    { label: "See Features", href: "#warehouse-features", variant: "outline" as const },
   ],
 };
 
@@ -172,7 +173,7 @@ export default function WarehousePage() {
       <HeroSection {...heroData} />
       <StatsBar {...statsData} />
       <PainPointsSection {...painData} />
-      <FeaturesSection {...featuresData} />
+      <FeaturesSection {...featuresData} id="warehouse-features" />
       <LifecycleSection {...lifecycleData} variant="default" />
       <AnimatedSection className="bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

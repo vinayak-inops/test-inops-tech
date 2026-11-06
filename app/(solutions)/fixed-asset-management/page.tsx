@@ -72,18 +72,20 @@ export default function FixedAssetManagementPage() {
       <SolutionLandingHero
         badge={
           <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
-            Fixed asset tracking
+            InOps FAM
           </span>
         }
         title={
           <>
-            Fixed Asset Management{" "}
+            Fixed Asset Management Software{" "}
             <span className="text-blue-600">for Industrial Sites</span>
           </>
         }
         subtitle="Tag, track, and maintain every fixed asset across your plant network — biometric attendance devices, machinery, tools, and infrastructure — with AMC scheduling, depreciation records, and full audit trails."
         imageSrc={fixedAssetHeroImage}
         imageAlt="Industrial machinery and fixed assets on a manufacturing floor"
+        primaryCta={{ label: "Book a Demo", href: "/contact" }}
+        secondaryCta={{ label: "See Features", href: "#fam-features-heading" }}
       />
 
       {/* Editorial: What is fixed asset management */}

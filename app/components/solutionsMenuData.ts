@@ -133,6 +133,13 @@ export const solutionsMegaRows: SolutionsMegaCell[][] = [
       description: "Early access to earned wages when employees need financial flexibility.",
       href: "/earned-wage-access",
     },
+    {
+      type: "tile",
+      title: "CLMS Pricing",
+      subtitle: "Iddion RegX",
+      description: "How Iddion RegX is scoped and quoted for your sites.",
+      href: "/clms-pricing",
+    },
     // {
     //   type: "tile",
     //   title: "Biometric Access Control",

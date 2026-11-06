@@ -387,7 +387,7 @@ export default function BiometricDevicesPage() {
                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-40" aria-hidden />
                         <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.7)]" aria-hidden />
                       </span>
-                      Biometric supply &amp; AMC · India since 2014
+                      ZKTeco · eSSL · Realtime
                     </span>
                   </motion.div>
 
@@ -397,9 +397,9 @@ export default function BiometricDevicesPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.55, ease: smoothEase, delay: 0.1 }}
                   >
-                    Biometric Devices for{" "}
+                    Biometric Attendance Machines &amp;{" "}
                     <span className="font-semibold text-[color:var(--inops-blue)]">
-                      Attendance and Access Control
+                      Access Control Devices
                     </span>
                   </motion.h1>
 
@@ -423,15 +423,14 @@ export default function BiometricDevicesPage() {
                       href="/contact"
                       className="group inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white shadow-md shadow-blue-600/30 transition hover:bg-blue-700 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
                     >
-                      Get a device recommendation
+                      Get a Quote
                     </Link>
-                    <a
-                      href="tel:+918088602602"
+                    <Link
+                      href="/face-recognition-attendance"
                       className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 hover:-translate-y-0.5"
                     >
-                      <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
-                      Call +91 80886 02602
-                    </a>
+                      Compare Devices
+                    </Link>
                   </motion.div>
                 </div>
               </div>

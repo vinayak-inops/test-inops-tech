@@ -1,12 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import Navbar from "@/app/components/Navbar";
 
 export default function CaseStudiesPage() {
   return (
     <>
-      <Navbar />
       <div className="bg-[#F8FAFB] text-[#16222E] antialiased" style={{ paddingTop: "var(--home-nav-offset,4.5rem)" }}>
 
         {/* Draft banner */}
@@ -22,6 +18,7 @@ export default function CaseStudiesPage() {
             <div className="max-w-[1180px] mx-auto px-6">
               <ol className="flex gap-2 text-sm text-[#425263] mb-6 list-none p-0" aria-label="Breadcrumb">
                 <li><Link href="/" className="text-[#425263] hover:underline">Home</Link></li>
+                <li className="before:content-['/'] before:mr-2 before:text-[#D6DEE5]"><Link href="/blog" className="text-[#425263] hover:underline">Resources</Link></li>
                 <li className="before:content-['/'] before:mr-2 before:text-[#D6DEE5]" aria-current="page">Case studies</li>
               </ol>
               <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] gap-12 items-end pb-10 max-[900px]:grid-cols-1 max-[900px]:gap-6">
@@ -55,7 +52,7 @@ export default function CaseStudiesPage() {
                   data-industry="automotive"
                   aria-labelledby="cs-auto"
                 >
-                  <div className="bg-[#DCEBF2] overflow-hidden min-h-[320px] max-[860px]:aspect-[2/1] max-[860px]:min-h-0">
+                  <div className="relative bg-[#DCEBF2] overflow-hidden min-h-[320px] max-[860px]:aspect-[2/1] max-[860px]:min-h-0">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1400&q=70"
@@ -65,7 +62,7 @@ export default function CaseStudiesPage() {
                       loading="eager"
                       decoding="async"
                       referrerPolicy="no-referrer"
-                      className="block w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-1">
@@ -101,100 +98,24 @@ export default function CaseStudiesPage() {
                         </svg>
                         Read case study
                       </Link>
-                      <a
+                      <Link
                         className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-semibold text-[0.95rem] no-underline border-[1.5px] border-[#0E5A78] bg-transparent text-[#0E5A78] hover:bg-[#DCEBF2]"
-                        href="/case-studies/downloads/inops-case-study-automotive-oem.pdf"
-                        download
+                        href="/contact"
                       >
                         <svg viewBox="0 0 16 16" aria-hidden width={16} height={16} className="flex-none">
                           <path d="M8 2v8m-3.5-3.5L8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        Download PDF
-                      </a>
-                      <span className="text-xs text-[#425263]">PDF, 8 pages</span>
+                        Request PDF
+                      </Link>
                     </div>
                   </div>
                 </article>
 
-                {/* CEMENT */}
-                <article className="flex flex-col bg-white border border-[#D6DEE5] rounded-2xl overflow-hidden" data-industry="cement" aria-labelledby="cs-cement">
-                  <div className="bg-[#DCEBF2] aspect-[2/1] overflow-hidden relative">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="https://images.unsplash.com/photo-1565620731358-e8c038abc8d1?auto=format&fit=crop&w=900&q=70" alt="Cement plant with industrial silos" width={900} height={450} loading="lazy" decoding="async" referrerPolicy="no-referrer" className="block w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex flex-wrap gap-[0.45rem] mb-3.5">
-                      <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-transparent text-[#7A5200] border-[1.5px] border-dashed border-[#E2A01B]">In preparation</span>
-                      <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#DCEBF2] text-[#0E5A78]">Cement</span>
-                    </div>
-                    <h3 id="cs-cement" className="font-bold text-[1.32rem] leading-[1.2] mb-2.5 font-sans">Multi-plant contract workforce compliance at a cement group</h3>
-                    <p className="mb-4 text-[#425263] text-[0.98rem]">Gate compliance, CLRA statutory registers, and contractor invoice reconciliation across clinker, grinding, and packaging plants.</p>
-                    <div className="mt-auto flex flex-wrap gap-2.5 items-center">
-                      <SoonBtn label="In preparation" icon="read" />
-                      <SoonBtn label="PDF available soon" icon="dl" />
-                    </div>
-                  </div>
-                </article>
-
-                {/* ELECTRONICS */}
-                <article className="flex flex-col bg-white border border-[#D6DEE5] rounded-2xl overflow-hidden" data-industry="electronics" aria-labelledby="cs-elec">
-                  <div className="bg-[#DCEBF2] aspect-[2/1] overflow-hidden relative">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=70" alt="Electronics circuit board on a manufacturing floor" width={900} height={450} loading="lazy" decoding="async" referrerPolicy="no-referrer" className="block w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex flex-wrap gap-[0.45rem] mb-3.5">
-                      <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-transparent text-[#7A5200] border-[1.5px] border-dashed border-[#E2A01B]">In preparation</span>
-                      <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#DCEBF2] text-[#0E5A78]">Electronics</span>
-                    </div>
-                    <h3 id="cs-elec" className="font-bold text-[1.32rem] leading-[1.2] mb-2.5 font-sans">Contract workforce onboarding at scale in electronics manufacturing</h3>
-                    <p className="mb-4 text-[#425263] text-[0.98rem]">High-volume worker enrolment, skill-based gate-pass issuance, and real-time headcount dashboards at a large EMS facility.</p>
-                    <div className="mt-auto flex flex-wrap gap-2.5 items-center">
-                      <SoonBtn label="In preparation" icon="read" />
-                      <SoonBtn label="PDF available soon" icon="dl" />
-                    </div>
-                  </div>
-                </article>
-
-                {/* METAL & STEEL */}
-                <article className="flex flex-col bg-white border border-[#D6DEE5] rounded-2xl overflow-hidden" data-industry="metal-steel" aria-labelledby="cs-steel">
-                  <div className="bg-[#DCEBF2] aspect-[2/1] overflow-hidden relative">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="https://images.unsplash.com/photo-1565793979098-5e5d3e1c0cbb?auto=format&fit=crop&w=900&q=70" alt="Molten steel being poured at a steel plant" width={900} height={450} loading="lazy" decoding="async" referrerPolicy="no-referrer" className="block w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex flex-wrap gap-[0.45rem] mb-3.5">
-                      <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-transparent text-[#7A5200] border-[1.5px] border-dashed border-[#E2A01B]">In preparation</span>
-                      <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#DCEBF2] text-[#0E5A78]">Metal &amp; Steel</span>
-                    </div>
-                    <h3 id="cs-steel" className="font-bold text-[1.32rem] leading-[1.2] mb-2.5 font-sans">Statutory register automation at a multi-unit steel plant</h3>
-                    <p className="mb-4 text-[#425263] text-[0.98rem]">Automated Form-XIII generation, wage reconciliation, and audit-ready contractor payroll across a vertically integrated steelworks.</p>
-                    <div className="mt-auto flex flex-wrap gap-2.5 items-center">
-                      <SoonBtn label="In preparation" icon="read" />
-                      <SoonBtn label="PDF available soon" icon="dl" />
-                    </div>
-                  </div>
-                </article>
-
-                {/* PHARMA */}
-                <article className="flex flex-col bg-white border border-[#D6DEE5] rounded-2xl overflow-hidden" data-industry="pharma" aria-labelledby="cs-pharma">
-                  <div className="bg-[#DCEBF2] aspect-[2/1] overflow-hidden relative">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=70" alt="Pharmaceutical laboratory with equipment and workers" width={900} height={450} loading="lazy" decoding="async" referrerPolicy="no-referrer" className="block w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex flex-wrap gap-[0.45rem] mb-3.5">
-                      <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-transparent text-[#7A5200] border-[1.5px] border-dashed border-[#E2A01B]">In preparation</span>
-                      <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#DCEBF2] text-[#0E5A78]">Pharma</span>
-                    </div>
-                    <h3 id="cs-pharma" className="font-bold text-[1.32rem] leading-[1.2] mb-2.5 font-sans">Zone-restricted access and hygiene compliance at a pharma plant</h3>
-                    <p className="mb-4 text-[#425263] text-[0.98rem]">Zone-limited gate passes, hygiene-linked entry rules, and contractor licence tracking at a regulated pharmaceutical facility.</p>
-                    <div className="mt-auto flex flex-wrap gap-2.5 items-center">
-                      <SoonBtn label="In preparation" icon="read" />
-                      <SoonBtn label="PDF available soon" icon="dl" />
-                    </div>
-                  </div>
-                </article>
+                {/* Coming soon note */}
+                <p className="col-span-full text-sm text-[#425263] border border-dashed border-[#D6DEE5] rounded-xl px-5 py-4">
+                  More case studies coming: <span className="font-medium text-[#16222E]">cement, electronics, steel, pharma</span>.{" "}
+                  <Link href="/contact" className="text-[#0E5A78] hover:underline">Get in touch</Link> if you&rsquo;d like to speak to a customer in your industry.
+                </p>
 
               </div>
             </div>
@@ -246,7 +167,7 @@ export default function CaseStudiesPage() {
                   <summary className="cursor-pointer py-4 pr-8 font-semibold list-none relative [&::-webkit-details-marker]:hidden after:content-['+'] after:absolute after:right-1 after:top-3.5 after:text-xl after:text-[#0E5A78] after:transition-transform group-open:after:rotate-45">
                     Can I speak to an InOps customer in my industry?
                   </summary>
-                  <p className="mb-4 text-[#425263]">Email <a href="mailto:contact@inops.tech" className="text-[#0E5A78]">contact@inops.tech</a> with your industry and plant count. InOps can arrange a reference conversation where a customer has agreed to take one.</p>
+                  <p className="mb-4 text-[#425263]"><Link href="/contact" className="text-[#0E5A78]">Contact us</Link> with your industry and plant count. InOps can arrange a reference conversation where a customer has agreed to take one.</p>
                 </details>
               </div>
             </div>
@@ -260,12 +181,12 @@ export default function CaseStudiesPage() {
               <h2 className="font-bold text-[clamp(1.6rem,3vw,2.3rem)] leading-[1.1] mb-2.5 max-w-[24ch] font-sans">Want to speak to a customer in your industry?</h2>
               <p className="m-0 max-w-[56ch] opacity-85">Speak to a specialist about contract workforce management at your plants, or ask us to arrange a reference call.</p>
             </div>
-            <a
+            <Link
               className="inline-block px-5 py-3.5 rounded-lg bg-[#E2A01B] text-[#1A1300] font-semibold no-underline whitespace-nowrap"
-              href="mailto:contact@inops.tech?subject=Case%20study%20enquiry"
+              href="/contact"
             >
               Talk to us
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -274,19 +195,3 @@ export default function CaseStudiesPage() {
   );
 }
 
-function SoonBtn({ label, icon }: { label: string; icon: "read" | "dl" }) {
-  return (
-    <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-semibold text-[0.95rem] border-[1.5px] border-[#D6DEE5] bg-[#EEF2F5] text-[#425263] cursor-not-allowed select-none">
-      {icon === "read" ? (
-        <svg viewBox="0 0 16 16" aria-hidden width={16} height={16} className="flex-none">
-          <path d="M2 3h5a2 2 0 0 1 2 2v8a1.5 1.5 0 0 0-1.5-1.5H2zM14 3H9a2 2 0 0 0-2 2v8a1.5 1.5 0 0 1 1.5-1.5H14z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-        </svg>
-      ) : (
-        <svg viewBox="0 0 16 16" aria-hidden width={16} height={16} className="flex-none">
-          <path d="M8 2v8m-3.5-3.5L8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )}
-      {label}
-    </span>
-  );
-}

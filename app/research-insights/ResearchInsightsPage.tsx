@@ -143,6 +143,59 @@ const jsonLd = `{
   ]
 }`;
 
+function fireResearchLead(name: string, company: string, email: string) {
+  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+  gtag?.("event", "generate_lead", { lead_type: "research", name, company, email });
+}
+
+function RegisterInterestForm() {
+  const [name, setName] = React.useState("");
+  const [company, setCompany] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [submitted, setSubmitted] = React.useState(false);
+
+  if (submitted) {
+    return (
+      <div className="ri-status" role="alert" style={{ maxWidth: "520px" }}>
+        <span className="ri-status-dot" aria-hidden="true" style={{ background: "var(--ok, #1E6E48)" }}></span>
+        <div><strong>Interest registered.</strong> We&apos;ll notify you when findings are published or recruitment opens.</div>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      id="ri-interest-form"
+      style={{ display: "flex", flexDirection: "column", gap: "0.75rem", maxWidth: "480px" }}
+      onSubmit={(e) => {
+        e.preventDefault();
+        fireResearchLead(name, company, email);
+        setSubmitted(true);
+      }}
+    >
+      <style>{`.ri-field{font:inherit;font-size:1rem;padding:.65rem .9rem;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}.ri-field:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px var(--brand-soft)}`}</style>
+      <label style={{ display: "flex", flexDirection: "column", gap: "0.3rem", fontSize: "0.9rem", fontWeight: 600 }}>
+        Your name
+        <input className="ri-field" type="text" required autoComplete="name" placeholder="e.g. Priya Sharma" value={name} onChange={e => setName(e.target.value)} />
+      </label>
+      <label style={{ display: "flex", flexDirection: "column", gap: "0.3rem", fontSize: "0.9rem", fontWeight: 600 }}>
+        Company
+        <input className="ri-field" type="text" required autoComplete="organization" placeholder="e.g. Tata Motors" value={company} onChange={e => setCompany(e.target.value)} />
+      </label>
+      <label style={{ display: "flex", flexDirection: "column", gap: "0.3rem", fontSize: "0.9rem", fontWeight: 600 }}>
+        Work email
+        <input className="ri-field" type="email" required autoComplete="email" placeholder="you@company.com" value={email} onChange={e => setEmail(e.target.value)} />
+      </label>
+      <button type="submit" className="ri-btn ri-btn-primary" style={{ alignSelf: "flex-start", marginTop: "0.25rem" }}>
+        Register interest
+      </button>
+      <p style={{ margin: 0, fontSize: "0.8rem", color: "var(--ink-2)" }}>
+        We&apos;ll only use this to notify you about the study. No spam.
+      </p>
+    </form>
+  );
+}
+
 export default function ResearchInsightsPage() {
   return (
     <>
@@ -160,12 +213,12 @@ export default function ResearchInsightsPage() {
             </ol>
           </nav>
           <section className="ri-hero" aria-labelledby="ri-h1">
-            <span className="ri-eyebrow">Research &amp; Insights · InOps and Iddion RegX</span>
-            <h1 id="ri-h1">Contract labour compliance research and insights</h1>
+            <span className="ri-eyebrow">Coming soon · Research &amp; Insights</span>
+            <h1 id="ri-h1">Contract Labour Compliance Research for India</h1>
             <p className="ri-lede">Research and practical guidance on how Indian manufacturing plants manage contract labour compliance under the Labour Codes. Our first planned study will assess 50 plants against one checklist, to show which compliance gaps are common and what closes them.</p>
             <div className="ri-hero-actions">
-              <a className="ri-btn ri-btn-primary" href="#ri-study">See the planned study</a>
-              <a className="ri-btn ri-btn-ghost" href="mailto:contact@inops.tech?subject=Research%20study%3A%20Contract%20Labour%20Compliance%20Gaps%20in%2050%20Indian%20Plants">Register interest</a>
+              <a className="ri-btn ri-btn-primary" href="#ri-interest-form">Register Interest</a>
+              <a className="ri-btn ri-btn-ghost" href="#ri-study">See the Planned Study</a>
             </div>
           </section>
         </div>
@@ -284,7 +337,7 @@ export default function ResearchInsightsPage() {
               <div className="ri-card"><h3>Comparisons</h3><p>Differences by plant size, sector, state and management approach, reported only where groups are large enough.</p></div>
               <div className="ri-card"><h3>The checklist and method</h3><p>The full assessment checklist, scoring definitions and limitations, so the work can be checked and reused.</p></div>
             </div>
-            <p className="ri-note">Want to know when findings are published? <a href="mailto:contact@inops.tech?subject=Notify%20me%3A%20Contract%20Labour%20Compliance%20Gaps%20study">Email contact@inops.tech</a> and ask to be notified.</p>
+            <p className="ri-note">Want to know when findings are published? <Link href="/contact">Contact us</Link> and ask to be notified.</p>
           </div>
         </section>
 
@@ -344,7 +397,7 @@ export default function ResearchInsightsPage() {
               <Link className="ri-card ri-link-card" href="/blog/vendor-management-contractors-manufacturing"><span className="ri-tag">Contractors</span><h3>Vendor management for contractors in manufacturing</h3><p>Licences, renewals, headcount caps and performance.</p></Link>
               <Link className="ri-card ri-link-card" href="/blog/what-is-contract-labour-management-system"><span className="ri-tag">CLMS</span><h3>Contract labour management system (CLMS) explained</h3><p>What a CLMS does and how it differs from an HRMS.</p></Link>
               <Link className="ri-card ri-link-card" href="/blog/clms-vs-hrms-difference"><span className="ri-tag">CLMS</span><h3>CLMS vs HRMS</h3><p>Why manufacturers usually need both, and where each fits.</p></Link>
-              <Link className="ri-card ri-link-card" href="/contract-labour-management"><span className="ri-tag">Buyer&apos;s guide</span><h3>Labour management system software guide</h3><p>What to look for across permanent and contract workforces.</p></Link>
+              <Link className="ri-card ri-link-card" href="/contract-labour-management"><span className="ri-tag">Buyer&apos;s guide</span><h3>Contract labour management system (CLMS) software</h3><p>What to look for across permanent and contract workforces.</p></Link>
               <Link className="ri-card ri-link-card" href="/blog/10-signs-factory-outgrown-spreadsheet-contractor-management"><span className="ri-tag">Operations</span><h3>10 signs you&apos;ve outgrown spreadsheets</h3><p>When contractor management needs a system.</p></Link>
             </div>
             <p className="ri-note">More articles on the <Link href="/blog">InOps blog</Link>.</p>
@@ -357,8 +410,8 @@ export default function ResearchInsightsPage() {
             <h2 id="ri-h-faq">About the study</h2>
             <div className="ri-faq">
               <details><summary>Has this research been conducted?</summary><p>Not yet. Contract Labour Compliance Gaps in 50 Indian Plants is a proposed InOps study. No plant data has been collected and no findings have been published.</p></details>
-              <details><summary>When will results be published?</summary><p>No publication date has been set. Findings will be published on this page only after fieldwork, analysis and review are complete. Email contact@inops.tech to be notified.</p></details>
-              <details><summary>Which plants can take part?</summary><p>The study is planned for manufacturing plants in India that engage contract labour through contractors. Inclusion criteria will be published before recruitment opens. Email contact@inops.tech to register interest.</p></details>
+              <details><summary>When will results be published?</summary><p>No publication date has been set. Findings will be published on this page only after fieldwork, analysis and review are complete. <a href="#ri-interest-form">Register interest</a> to be notified.</p></details>
+              <details><summary>Which plants can take part?</summary><p>The study is planned for manufacturing plants in India that engage contract labour through contractors. Inclusion criteria will be published before recruitment opens. <a href="#ri-interest-form">Register interest</a> to be notified when recruitment opens.</p></details>
               <details><summary>Will participating plants be named?</summary><p>No. Results will be reported only in aggregate, and only for groups large enough that no single plant can be identified.</p></details>
               <details><summary>Do participants need to use InOps software?</summary><p>No. The study is planned to include InOps customers and non-customers, and the mix will be reported with the results.</p></details>
               <details><summary>Which laws will the study assess against?</summary><p>The Labour Codes in force since 21 November 2025, mainly the Occupational Safety, Health and Working Conditions Code, 2020, the Code on Wages, 2019 and the Code on Social Security, 2020, together with the rules in force in each plant's state at the time of assessment.</p></details>
@@ -369,11 +422,11 @@ export default function ResearchInsightsPage() {
         <section className="ri-cta" aria-labelledby="ri-h-cta">
           <div className="ri-wrap">
             <h2 id="ri-h-cta">Register interest in the study</h2>
-            <p>Email us to register your plant&apos;s interest in taking part, or to be notified when findings are published.</p>
-            <div className="ri-cta-row">
-              <a className="ri-btn ri-btn-primary" href="mailto:contact@inops.tech?subject=Research%20study%3A%20Contract%20Labour%20Compliance%20Gaps%20in%2050%20Indian%20Plants&body=I%27d%20like%20to%3A%20(take%20part%20%2F%20be%20notified%20of%20findings)%0ACompany%3A%0APlant%20location(s)%3A%0AApprox.%20contract%20workers%3A%0ARole%3A%0A">Email contact@inops.tech</a>
-              <Link className="ri-btn ri-btn-ghost" href="/contact">Talk to our team</Link>
-            </div>
+            <p>Leave your details and we&apos;ll notify you when fieldwork opens or findings are published.</p>
+            <RegisterInterestForm />
+            <p style={{ marginTop: "1.25rem", fontSize: "0.95rem", color: "var(--ink-on-deep-2)" }}>
+              Or <Link href="/contact" style={{ color: "var(--ink-on-deep-2)", fontWeight: 600 }}>talk to our team</Link> about the study or Iddion RegX.
+            </p>
           </div>
         </section>
       </main>

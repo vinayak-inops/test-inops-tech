@@ -56,7 +56,6 @@ const ourModulesCardVariant = {
 } as const;
 
 const payrollHeroRightBackground = "/WhatsApp Image 2026-05-04 at 12.41.37 PM.jpeg";
-const payrollHeroRightVideo = mediaVideos.payrollHeroDemo;
 const accessGovernanceLeftVideo = mediaVideos.accessGovernanceDemo;
 
 const comprehensiveControlCards = [
@@ -502,7 +501,7 @@ function OurModuleCard({ slide, palette, slug }: { slide: OurModuleSlide; palett
 
   return (
     <motion.article
-      className="relative flex h-[22rem] w-full max-w-[17.5rem] flex-col overflow-hidden rounded-xl border border-slate-200/90 bg-white shadow-[0_8px_30px_-12px_rgba(15,23,42,0.18)] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 hover:shadow-[0_14px_40px_-14px_rgba(15,23,42,0.22)] lg:max-w-none"
+      className="relative flex min-h-[22rem] w-full max-w-[17.5rem] flex-col overflow-hidden rounded-xl border border-slate-200/90 bg-white shadow-[0_8px_30px_-12px_rgba(15,23,42,0.18)] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 hover:shadow-[0_14px_40px_-14px_rgba(15,23,42,0.22)] lg:max-w-none"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
@@ -538,7 +537,7 @@ function OurModuleCard({ slide, palette, slug }: { slide: OurModuleSlide; palett
         <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-slate-900">
           {slide.title}
         </h3>
-        <p className="mt-2 line-clamp-3 flex-1 text-xs leading-relaxed text-slate-600">
+        <p className="mt-2 flex-1 text-xs leading-relaxed text-slate-600">
           {slide.description}
         </p>
         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="mt-auto pt-3">
@@ -787,6 +786,159 @@ function AccessGovernanceVisual() {
   );
 }
 
+const FAQ_VISIBLE_DEFAULT = 8;
+
+function ClmsFaqAccordion() {
+  const [showAll, setShowAll] = useState(false);
+  const visible = showAll ? clmsFaqItems : clmsFaqItems.slice(0, FAQ_VISIBLE_DEFAULT);
+  return (
+    <div className="divide-y divide-slate-200">
+      {visible.map((item, index) => (
+        <details key={item.question} className="group bg-white/70 px-5 py-5 open:bg-white sm:px-7 sm:py-6">
+          <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left marker:hidden">
+            <span className="flex min-w-0 gap-4">
+              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold tabular-nums text-blue-700 ring-1 ring-blue-100">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="text-base font-semibold leading-snug text-slate-950 sm:text-lg">{item.question}</span>
+            </span>
+            <span
+              className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-lg leading-none text-slate-600 transition group-open:rotate-45 group-open:border-blue-200 group-open:text-blue-700"
+              aria-hidden
+            >
+              +
+            </span>
+          </summary>
+          <p className="mt-4 pl-12 text-sm leading-relaxed text-slate-600 sm:pl-12 sm:text-base">{item.answer}</p>
+        </details>
+      ))}
+      {!showAll && clmsFaqItems.length > FAQ_VISIBLE_DEFAULT && (
+        <div className="px-5 py-6 sm:px-7">
+          <button
+            onClick={() => setShowAll(true)}
+            className="flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800"
+          >
+            More questions
+            <span aria-hidden className="inline-block transition group-open:rotate-180">↓</span>
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ClmsRoiCalculator() {
+  const [workers, setWorkers] = useState(500);
+  const [spendPerWorker, setSpendPerWorker] = useState(15000);
+
+  const monthlySpend = workers * spendPerWorker;
+  const ghostSavings = Math.round(monthlySpend * 0.04);
+  const invoiceSavings = Math.round(monthlySpend * 0.025);
+  const annualSavings = (ghostSavings + invoiceSavings) * 12;
+
+  function fmt(n: number) {
+    if (n >= 10000000) return `₹${(n / 10000000).toFixed(1)} Cr`;
+    if (n >= 100000) return `₹${(n / 100000).toFixed(1)} L`;
+    return `₹${n.toLocaleString("en-IN")}`;
+  }
+
+  return (
+    <section
+      id="roi-calculator"
+      className="border-t border-slate-200 bg-slate-50 px-4 py-14 sm:px-6 lg:px-8 lg:py-20"
+    >
+      <div className="mx-auto max-w-4xl">
+        <div className="text-center">
+          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-blue-700">
+            ROI Estimator
+          </span>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            Estimate your savings with Iddion RegX
+          </h2>
+          <p className="mt-3 text-base text-slate-600">
+            Based on industry averages: ghost workers account for 3–5% of contractor spend; invoice discrepancies average 25–30% before automated matching.
+          </p>
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <div className="grid gap-8 sm:grid-cols-2">
+            <div>
+              <label className="block text-sm font-semibold text-slate-700">
+                Contract workers on site
+              </label>
+              <div className="mt-2 flex items-center gap-4">
+                <input
+                  type="range"
+                  min={50}
+                  max={5000}
+                  step={50}
+                  value={workers}
+                  onChange={(e) => setWorkers(Number(e.target.value))}
+                  className="flex-1 accent-blue-600"
+                />
+                <span className="w-16 text-right text-base font-bold tabular-nums text-slate-900">
+                  {workers.toLocaleString("en-IN")}
+                </span>
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-slate-700">
+                Avg monthly cost per worker (₹)
+              </label>
+              <div className="mt-2 flex items-center gap-4">
+                <input
+                  type="range"
+                  min={5000}
+                  max={50000}
+                  step={1000}
+                  value={spendPerWorker}
+                  onChange={(e) => setSpendPerWorker(Number(e.target.value))}
+                  className="flex-1 accent-blue-600"
+                />
+                <span className="w-20 text-right text-base font-bold tabular-nums text-slate-900">
+                  {fmt(spendPerWorker)}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-xl border border-blue-100 bg-blue-50/60 p-4 text-center">
+              <p className="text-xs font-semibold uppercase tracking-widest text-blue-600">Ghost worker savings</p>
+              <p className="mt-2 text-2xl font-bold tabular-nums text-slate-900">
+                {fmt(ghostSavings)}<span className="ml-0.5 text-sm font-normal text-slate-500">/mo</span>
+              </p>
+              <p className="mt-1 text-xs text-slate-500">~4% of contractor spend</p>
+            </div>
+            <div className="rounded-xl border border-blue-100 bg-blue-50/60 p-4 text-center">
+              <p className="text-xs font-semibold uppercase tracking-widest text-blue-600">Invoice savings</p>
+              <p className="mt-2 text-2xl font-bold tabular-nums text-slate-900">
+                {fmt(invoiceSavings)}<span className="ml-0.5 text-sm font-normal text-slate-500">/mo</span>
+              </p>
+              <p className="mt-1 text-xs text-slate-500">~2.5% of contractor spend</p>
+            </div>
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-center">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">Annual total</p>
+              <p className="mt-2 text-2xl font-bold tabular-nums text-slate-900">{fmt(annualSavings)}</p>
+              <p className="mt-1 text-xs text-slate-500">per year</p>
+            </div>
+          </div>
+
+          <p className="mt-5 text-center text-xs text-slate-400">
+            Estimate based on industry input; actual leakage varies by site.
+          </p>
+
+          <div className="mt-6 flex justify-center">
+            <Link href="/contact" className={inopsUi.btnPrimary}>
+              Book a Demo to verify your numbers
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function PayrollSolutionsPage() {
   return (
     <MotionConfig reducedMotion="user">
@@ -808,18 +960,14 @@ export default function PayrollSolutionsPage() {
               <div
                 className={`relative z-[2] mt-8 h-52 w-full sm:h-60 ${SPLIT_HERO_MOBILE_MEDIA_ORDER} lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2 ${SPLIT_HERO_MEDIA_MR}`}
               >
-                <video
-                  className="absolute inset-0 h-full w-full object-cover object-[center_35%] sm:object-center lg:object-[center_40%]"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster={payrollHeroRightBackground}
-                  aria-label="Payroll dashboard and contract Contract Labour Management overview"
-                >
-                  <source src={payrollHeroRightVideo} type="video/mp4" />
-                </video>
+                <Image
+                  src={payrollHeroRightBackground}
+                  alt="Contract workers at an Indian manufacturing site gate — Iddion RegX CLMS"
+                  fill
+                  className="object-cover object-[center_35%] sm:object-center lg:object-[center_40%]"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
                 <div
                   className="pointer-events-none absolute inset-y-0 left-0 hidden w-24 bg-gradient-to-r from-white to-transparent lg:block"
                   aria-hidden
@@ -829,27 +977,25 @@ export default function PayrollSolutionsPage() {
                     {
                       position: "top-left",
                       label: "Live",
-                      className: "top-10 -left-10 sm:-top-10 sm:-left-10 md:-top-10 md:-left-10 lg:-top-10 lg:-left-10 xl:-top-3 xl:-left-10",
+                      className: "top-5 left-5",
                       title: "Sites synced",
                       accent: "emerald",
-                      hideOnMobile: false,
                     },
                     {
                       position: "bottom-right",
                       label: "Compliance",
                       title: "Contractors cleared",
-                      className: "bottom-10 right-10 sm:-bottom-10 sm:-right-10 md:-bottom-10 md:-right-10 lg:-bottom-10 lg:-right-10 xl:bottom-10 xl:-right-2",
+                      className: "bottom-5 right-5",
                       variant: "icon",
                       icon: "shield",
                       accent: "blue",
-                      hideOnMobile: false,
                     },
                   ]}
                 />
               </div>
               <div className={`relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 ${SPLIT_HERO_MOBILE_COPY_ORDER}`}>
                 <div
-                  className={`max-w-3xl px-2 py-6 pb-5 sm:px-4 sm:py-8 sm:pb-7 lg:max-w-xl lg:pt-10 lg:pb-5 lg:pr-6 ${SPLIT_HERO_COPY_ML}`}
+                  className={`max-w-3xl px-2 py-6 pb-5 sm:px-4 sm:py-8 sm:pb-7 lg:max-w-2xl lg:pt-10 lg:pb-5 lg:pr-6 ${SPLIT_HERO_COPY_ML}`}
                 >
                   <FlyInText
                     as="span"
@@ -859,7 +1005,7 @@ export default function PayrollSolutionsPage() {
                     className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-blue-800 shadow-sm backdrop-blur"
                   >
                     <span className="h-2 w-2 rounded-full bg-[color:var(--inops-blue)]" aria-hidden />
-                    Iddion RegX · Payroll · Compliance · Contractor ops
+                    Iddion RegX CLMS
                   </FlyInText>
 
                   <FlyInText
@@ -868,7 +1014,7 @@ export default function PayrollSolutionsPage() {
                     direction="down"
                     delay={0.04}
                     duration={0.5}
-                    className="mt-4 text-sm font-semibold tracking-wide text-slate-700 lg:mt-5"
+                    className="mt-4 text-[2.75rem] leading-[1.15] font-bold tracking-tight text-slate-950 lg:mt-5"
                   >
                     Contract Labour Management System (CLMS) Software for Indian Plants
                   </FlyInText>
@@ -881,7 +1027,7 @@ export default function PayrollSolutionsPage() {
                     duration={0.62}
                     className="mt-5 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base"
                   >
-                    Iddion RegX by InOps is a contract labour management system (CLMS) for Indian manufacturing plants. It handles contractor onboarding, gate passes, biometric attendance, wages, PF/ESI and statutory registers on one platform, across every site. Principal employers use it to stay inspection-ready and to reconcile contractor invoices against real attendance.
+                    Contractor onboarding, gate passes, biometric attendance, wages, PF/ESI and statutory registers. One CLMS for every site, Labour Codes-ready.
                   </FlyInText>
 
                   <FlyInText
@@ -894,14 +1040,17 @@ export default function PayrollSolutionsPage() {
                   >
                     <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
                       <Link href="/contact" className={inopsUi.btnPrimary}>
-                        Get In Touch
+                        Book a Demo
                       </Link>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
-                      <Link href="/contact" className={inopsUi.btnSecondary}>
+                      <Link href="#roi-calculator" className={inopsUi.btnSecondary}>
                         Calculate ROI
                       </Link>
                     </motion.div>
+                    <Link href="/clms-pricing" className="text-sm font-medium text-slate-400 hover:text-blue-600 underline underline-offset-4 transition-colors">
+                      See how RegX is priced →
+                    </Link>
                   </FlyInText>
                 </div>
               </div>
@@ -993,6 +1142,370 @@ export default function PayrollSolutionsPage() {
         </section>
 
         <OurModulesCarousel />
+
+        {/* ====== PLATFORM IN ACTION (SCREENSHOTS) ====== */}
+        <section aria-labelledby="screenshots-heading" className="border-t border-slate-100 bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.5, ease: smoothEase }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Platform in action</p>
+              <h2 id="screenshots-heading" className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+                See every corner of your contract workforce
+              </h2>
+              <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+                Dashboards, gate logs, wage registers and compliance trackers — all in one screen.
+              </p>
+            </motion.div>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:gap-8">
+              {[
+                {
+                  src: "/images/labour-management-ui-showcase.png",
+                  alt: "CLMS workforce analytics dashboard — workforce headcount, compliance status and contractor spend at a glance",
+                  caption: "Live workforce dashboard",
+                },
+                {
+                  src: "/images/module-auth-access-control.png",
+                  alt: "Iddion RegX gate compliance screen — 19 automated entry checks before a contract worker is admitted to site",
+                  caption: "Gate pass & compliance checks",
+                },
+                {
+                  src: "/images/module-compliance-payroll.png",
+                  alt: "CLRA wage register in Iddion RegX — Form V and Form XIII auto-populated from verified attendance data",
+                  caption: "Statutory wage register (Form V / Form XIII)",
+                },
+                {
+                  src: "/images/module-biometric-attendance.png",
+                  alt: "Biometric attendance dashboard — per-contractor, per-site punch records synced in real time for payroll processing",
+                  caption: "Biometric attendance — per site",
+                },
+              ].map(({ src, alt, caption }, i) => (
+                <motion.figure
+                  key={caption}
+                  className="overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50 shadow-sm"
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={viewport}
+                  transition={{ duration: 0.45, delay: i * 0.07, ease: smoothEase }}
+                >
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
+                    <Image
+                      src={src}
+                      alt={alt}
+                      fill
+                      loading="lazy"
+                      className="object-cover object-top"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                  </div>
+                  <figcaption className="px-4 py-3 text-xs font-medium text-slate-500">{caption}</figcaption>
+                </motion.figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== DIRECT & CONTRACT WORKFORCE ====== */}
+        <section aria-labelledby="direct-contract-heading" className="border-t border-slate-100 bg-slate-50/60 px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.5, ease: smoothEase }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">One platform, two workforce types</p>
+              <h2 id="direct-contract-heading" className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+                Direct and contract workforce — managed together
+              </h2>
+              <p className="mt-3 max-w-2xl text-base text-slate-600">
+                Most plants run a mix of permanent employees and contract workers across the same gates and shifts. Iddion RegX tracks both, giving HR, finance and compliance teams a single consolidated view without duplicating records.
+              </p>
+            </motion.div>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { label: "Unified headcount view", body: "See permanent and contract staff in one dashboard — same gate log, same compliance tracker." },
+                { label: "Separate cost centres", body: "Payroll costs for contract workers flow to the correct principal-employer cost centre automatically." },
+                { label: "Shared shift scheduling", body: "Assign both workforce types to the same shift without maintaining parallel spreadsheets." },
+                { label: "Per-vendor compliance", body: "Track each contractor's Form V / XIII, PF/ESI challans and licence expiry independently." },
+                { label: "Transfer & deputation", body: "Move workers between departments or sites while retaining a full audit trail of attendance and entitlements." },
+                { label: "Exit & final settlement", body: "Automated exit checklists, asset recovery and gratuity calculations for both workforce types." },
+              ].map(({ label, body }) => (
+                <div key={label} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <p className="text-sm font-semibold text-slate-900">{label}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== HOW A ROLLOUT WORKS ====== */}
+        <section aria-labelledby="rollout-heading" className="border-t border-slate-100 bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.5, ease: smoothEase }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Implementation</p>
+              <h2 id="rollout-heading" className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+                How a rollout works
+              </h2>
+              <p className="mt-3 max-w-2xl text-base text-slate-600">
+                Most plants go live in 6–8 weeks. The process is designed around your existing site infrastructure — no rip-and-replace.
+              </p>
+            </motion.div>
+            <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { step: "01", title: "Assess", body: "We map your contractor list, existing registers, gate hardware and ERP touchpoints." },
+                { step: "02", title: "Configure", body: "Platform configured for your gates, shifts, contractors, compliance rules and cost centres." },
+                { step: "03", title: "Train & pilot", body: "HR, security and finance teams trained on-site. Pilot run on one gate or one contractor." },
+                { step: "04", title: "Go live", body: "Full site rollout with dedicated support. Ongoing SLA covering uptime, data and regulatory updates." },
+              ].map(({ step, title, body }) => (
+                <li key={step} className="flex flex-col gap-3 rounded-xl border border-slate-200 bg-slate-50/60 p-6">
+                  <span className="text-3xl font-bold tabular-nums text-blue-100">{step}</span>
+                  <p className="text-base font-semibold text-slate-900">{title}</p>
+                  <p className="text-sm leading-relaxed text-slate-600">{body}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* ====== INTEGRATIONS ====== */}
+        <section aria-labelledby="integrations-heading" className="border-t border-slate-100 bg-slate-50/60 px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.5, ease: smoothEase }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Integrations</p>
+              <h2 id="integrations-heading" className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+                Plugs into your existing stack
+              </h2>
+              <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+                Iddion RegX connects to ERP, payroll, HRMS and biometric hardware through standard APIs and file-based connectors — no custom middleware required.
+              </p>
+            </motion.div>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { category: "ERP", examples: "SAP, Oracle, Microsoft Dynamics" },
+                { category: "Payroll", examples: "Ramco, GreytHR, Spine" },
+                { category: "Biometric hardware", examples: "ZKTeco, Hikvision, Suprema" },
+                { category: "HRMS", examples: "Darwinbox, Keka, SAP SuccessFactors" },
+                { category: "Security / access control", examples: "Honeywell, Matrix, Bosch" },
+                { category: "Govt portals", examples: "ESIC, EPFO, Shram Suvidha" },
+              ].map(({ category, examples }) => (
+                <div key={category} className="flex flex-col gap-1.5 rounded-xl border border-slate-200 bg-white p-5">
+                  <p className="text-sm font-semibold text-slate-900">{category}</p>
+                  <p className="text-xs text-slate-500">{examples}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-center text-xs text-slate-400">
+              Custom integrations available. Contact us for connector availability.
+            </p>
+          </div>
+        </section>
+
+        {/* ====== CLOUD OR ON-PREMISES ====== */}
+        <section aria-labelledby="deployment-heading" className="border-t border-slate-100 bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.5, ease: smoothEase }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Deployment</p>
+              <h2 id="deployment-heading" className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+                Cloud or on-premises — your choice
+              </h2>
+              <p className="mt-3 max-w-2xl text-base text-slate-600">
+                Whether your IT policy mandates data sovereignty or you want zero-maintenance SaaS, Iddion RegX supports both models with the same feature set.
+              </p>
+            </motion.div>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {[
+                {
+                  title: "Cloud-hosted SaaS",
+                  badge: "Most popular",
+                  badgeColor: "bg-blue-50 text-blue-700",
+                  points: [
+                    "Up and running in days",
+                    "Automatic regulatory and security updates",
+                    "Data hosted on Indian data centres (ISO/IEC 27001)",
+                    "Pay-per-site subscription, no capex",
+                  ],
+                },
+                {
+                  title: "On-premises / private cloud",
+                  badge: "For sensitive plants",
+                  badgeColor: "bg-slate-100 text-slate-600",
+                  points: [
+                    "Deployed on your own servers or private cloud",
+                    "No data leaves your network",
+                    "Suitable for defence, aerospace and classified sites",
+                    "Annual licence with our managed update service",
+                  ],
+                },
+              ].map(({ title, badge, badgeColor, points }) => (
+                <div key={title} className="flex flex-col gap-5 rounded-2xl border border-slate-200 bg-slate-50/60 p-7">
+                  <div className="flex items-start justify-between gap-3">
+                    <p className="text-lg font-semibold text-slate-900">{title}</p>
+                    <span className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${badgeColor}`}>{badge}</span>
+                  </div>
+                  <ul className="flex flex-col gap-2.5">
+                    {points.map((pt) => (
+                      <li key={pt} className="flex items-start gap-2 text-sm text-slate-600">
+                        <span className="mt-0.5 text-blue-500" aria-hidden>✓</span>
+                        {pt}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== SECURITY AND DATA PROTECTION ====== */}
+        <section aria-labelledby="security-heading" className="border-t border-slate-100 bg-slate-50/60 px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              className="lg:flex lg:items-start lg:justify-between lg:gap-16"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.5, ease: smoothEase }}
+            >
+              <div className="lg:max-w-lg">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Security</p>
+                <h2 id="security-heading" className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+                  Security and data protection
+                </h2>
+                <p className="mt-3 text-base text-slate-600">
+                  Iddion RegX is built to handle sensitive workforce data at Indian manufacturing plants, including defence and aerospace suppliers. Our controls are audited and certified.
+                </p>
+              </div>
+              <ul className="mt-8 flex flex-col gap-4 lg:mt-0 lg:min-w-[22rem]">
+                {[
+                  { icon: "🔒", label: "ISO/IEC 27001 certified", detail: "Annual third-party audit of our information security management system." },
+                  { icon: "🗄️", label: "Data residency in India", detail: "All workforce data stored on Indian servers; no cross-border transfer by default." },
+                  { icon: "🔐", label: "Role-based access control", detail: "Fine-grained permissions per site, contractor, module and report." },
+                  { icon: "📋", label: "Audit trail on every action", detail: "Every gate entry, wage edit and document upload is timestamped and attributed." },
+                  { icon: "🛡️", label: "Encrypted data at rest and in transit", detail: "AES-256 at rest; TLS 1.3 for all API traffic." },
+                ].map(({ icon, label, detail }) => (
+                  <li key={label} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4">
+                    <span className="mt-0.5 text-lg" aria-hidden>{icon}</span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900">{label}</p>
+                      <p className="mt-0.5 text-xs leading-relaxed text-slate-500">{detail}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ====== CUSTOMER STORY ====== */}
+        <section aria-labelledby="customer-story-heading" className="border-t border-slate-100 bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              className="lg:flex lg:items-center lg:gap-16"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.5, ease: smoothEase }}
+            >
+              <div className="flex-1">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Customer story</p>
+                <h2 id="customer-story-heading" className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+                  Automotive OEM: multi-plant CLMS rollout
+                </h2>
+                <blockquote className="mt-5 border-l-4 border-blue-200 pl-5">
+                  <p className="text-base italic leading-relaxed text-slate-700">
+                    "We went from paper gate registers and manual wage reconciliation to a fully digital CLMS across four plants in under two months. PF/ESI discrepancies dropped to near zero in the first quarter."
+                  </p>
+                  <footer className="mt-3 text-sm font-semibold text-slate-600">— Head of HR Operations, Tier-1 Automotive OEM</footer>
+                </blockquote>
+                <div className="mt-6 flex flex-wrap gap-6">
+                  {[
+                    { stat: "4 plants", label: "live simultaneously" },
+                    { stat: "< 8 weeks", label: "to full go-live" },
+                    { stat: "~0", label: "PF/ESI discrepancies after Q1" },
+                  ].map(({ stat, label }) => (
+                    <div key={label}>
+                      <p className="text-2xl font-bold text-slate-950">{stat}</p>
+                      <p className="mt-0.5 text-xs text-slate-500">{label}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-8">
+                  <Link
+                    href="/case-studies/automotive-oem-multi-plant-clms"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[color:var(--inops-blue)] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-90"
+                  >
+                    Read the full case study →
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ====== HOW TO EVALUATE A CLMS ====== */}
+        <section aria-labelledby="evaluate-heading" className="border-t border-slate-100 bg-slate-50/60 px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.5, ease: smoothEase }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Buyer guidance</p>
+              <h2 id="evaluate-heading" className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+                How to evaluate a CLMS
+              </h2>
+              <p className="mt-3 max-w-2xl text-base text-slate-600">
+                Use these five criteria when comparing contract labour management software for Indian plants. A short demo should answer all of them.
+              </p>
+            </motion.div>
+            <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { n: "1", q: "Does it cover the full CLRA lifecycle?", detail: "From contractor onboarding and Form V to wages, PF/ESI challans and Form XIII exit — gaps create compliance risk." },
+                { n: "2", q: "Can it run across multiple sites from one console?", detail: "Spreadsheet-per-site approaches break once you cross three plants. Look for a single login with site-level segregation." },
+                { n: "3", q: "Does it connect to your biometric hardware and ERP?", detail: "Manual data entry between systems is the main source of leakage. Confirm the connector exists before you sign." },
+                { n: "4", q: "Is it Labour Codes-ready?", detail: "The four Labour Codes will change wage definitions and contribution rates. Your CLMS should update automatically." },
+                { n: "5", q: "What does the implementation timeline look like?", detail: "A well-scoped rollout at a single site should take 4–6 weeks. Longer usually means high customisation risk." },
+              ].map(({ n, q, detail }) => (
+                <li key={n} className="flex flex-col gap-3 rounded-xl border border-slate-200 bg-white p-6">
+                  <span className="text-3xl font-bold tabular-nums text-blue-100">{n}</span>
+                  <p className="text-sm font-semibold leading-snug text-slate-900">{q}</p>
+                  <p className="text-sm leading-relaxed text-slate-600">{detail}</p>
+                </li>
+              ))}
+            </ol>
+            <div className="mt-8 text-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-xl bg-[color:var(--inops-blue)] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-90"
+              >
+                Book a demo to see Iddion RegX answer all five →
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Real-time access governance */}
         <section
@@ -1560,24 +2073,38 @@ export default function PayrollSolutionsPage() {
           </div>
         </section> */}
 
-        {/* ====== TRUSTED BY ANCHOR CLIENTS ====== */}
-        <section className="border-t border-slate-200/80 bg-slate-50/60 py-8 lg:py-10" aria-label="Trusted by">
+        {/* ====== PROOF STRIP ====== */}
+        <section className="border-t border-slate-200 bg-white py-7 lg:py-8" aria-label="Trusted by">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
             <motion.div
-              className="flex flex-col items-center gap-5"
-              initial={{ opacity: 0, y: 12 }}
+              className="flex flex-col items-center gap-6 lg:flex-row lg:justify-between"
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewport}
-              transition={{ duration: 0.5, ease: smoothEase }}
+              transition={{ duration: 0.45, ease: smoothEase }}
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Trusted by</p>
-              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
-                {["Ashok Leyland", "Foxconn", "HAL", "BHEL", "Apollo", "Ramky"].map((name) => (
-                  <span
+              <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Trusted by</p>
+              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-5 lg:gap-x-10">
+                {[
+                  { src: "/clients/automotive-axle.svg", name: "Automotive Axles", w: 110 },
+                  { src: "/clients/ashok-leyland.svg", name: "Ashok Leyland", w: 100 },
+                  { src: "/clients/skf.svg", name: "SKF", w: 56 },
+                ].map(({ src, name, w }) => (
+                  <Image
                     key={name}
-                    className="text-sm font-bold tracking-tight text-slate-500 transition-colors duration-200 hover:text-slate-700"
-                  >
-                    {name}
+                    src={src}
+                    alt={name}
+                    width={w}
+                    height={32}
+                    className="h-7 w-auto grayscale opacity-60 transition-opacity duration-200 hover:opacity-90"
+                  />
+                ))}
+              </div>
+              <div className="flex shrink-0 flex-wrap items-center justify-center gap-x-1 gap-y-1.5 lg:justify-end">
+                {["3,000+ devices", "70+ sites", "ISO/IEC 27001 certified"].map((stat, i) => (
+                  <span key={stat} className="flex items-center gap-1 text-xs font-medium text-slate-500">
+                    {i > 0 && <span className="mx-1.5 inline-block h-3.5 w-px bg-slate-200" aria-hidden />}
+                    {stat}
                   </span>
                 ))}
               </div>
@@ -1612,6 +2139,8 @@ export default function PayrollSolutionsPage() {
           </div>
         </section> */}
 
+        <ClmsRoiCalculator />
+
         <section aria-labelledby="clms-faq-heading" className="bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
           <div className="mx-auto max-w-7xl">
             <motion.div
@@ -1636,27 +2165,7 @@ export default function PayrollSolutionsPage() {
               viewport={viewport}
               transition={{ duration: 0.5, ease: smoothEase, delay: 0.08 }}
             >
-              <div className="divide-y divide-slate-200">
-                {clmsFaqItems.map((item, index) => (
-                  <details key={item.question} className="group bg-white/70 px-5 py-5 open:bg-white sm:px-7 sm:py-6">
-                    <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left marker:hidden">
-                      <span className="flex min-w-0 gap-4">
-                        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold tabular-nums text-blue-700 ring-1 ring-blue-100">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <span className="text-base font-semibold leading-snug text-slate-950 sm:text-lg">{item.question}</span>
-                      </span>
-                      <span
-                        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-lg leading-none text-slate-600 transition group-open:rotate-45 group-open:border-blue-200 group-open:text-blue-700"
-                        aria-hidden
-                      >
-                        +
-                      </span>
-                    </summary>
-                    <p className="mt-4 pl-12 text-sm leading-relaxed text-slate-600 sm:pl-12 sm:text-base">{item.answer}</p>
-                  </details>
-                ))}
-              </div>
+              <ClmsFaqAccordion />
             </motion.div>
           </div>
         </section>

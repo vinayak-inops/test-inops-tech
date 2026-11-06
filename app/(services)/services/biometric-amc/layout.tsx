@@ -11,7 +11,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import { biometricAmcFaqItems } from "@/app/lib/biometricAmcFaqItems";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "Biometric AMC & Repair Services India | ZKTeco, eSSL & Multi-Brand Device Maintenance — InOps";
+const PAGE_TITLE = "Biometric AMC & Repair Services | ZKTeco, eSSL | InOps";
 const PAGE_DESCRIPTION =
   "SLA-backed AMC and repair for eSSL, ZKTeco, and Realtime biometric devices — face terminals, fingerprint readers, and RFID access hardware. Multi-site, single-vendor service across India.";
 

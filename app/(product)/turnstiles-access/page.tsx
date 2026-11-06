@@ -180,10 +180,17 @@ export default function TurnstilesPage() {
     <>
       <div className="solution-product-section-gap min-h-screen bg-white text-gray-900">
         <SolutionLandingHero
-          title="Turnstile Access Control for Factory Gates"
+          badge={
+            <span className="inline-flex rounded-full border border-blue-200/90 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-blue-800 shadow-sm backdrop-blur-sm">
+              Entrance Control
+            </span>
+          }
+          title="Turnstiles &amp; Flap Barriers for Factory Gates"
           subtitle="Tripod turnstiles and flap barriers with integrated biometric readers — stainless steel construction, CLMS-connected access control, and high-throughput entry for industrial sites, campuses, and commercial facilities across India."
           imageSrc={turnstilesHeroBg}
           imageAlt="Security turnstile lanes at a facility entrance"
+          primaryCta={{ label: "Get a Quote", href: "/contact" }}
+          secondaryCta={{ label: "See Specifications", href: "#turnstile-specifications" }}
         />
 
         {/* Main content – tripod turnstile image left, text right */}
@@ -303,7 +310,7 @@ export default function TurnstilesPage() {
         </section>
 
         {/* Features + specifications ,  side by side from lg */}
-        <section className="border-t border-slate-200/80 from-slate-50 via-white to-slate-50 py-8 lg:py-12 bg-white">
+        <section id="turnstile-specifications" className="border-t border-slate-200/80 from-slate-50 via-white to-slate-50 py-8 lg:py-12 bg-white">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-10 xl:gap-14">
               {/* Left: Features */}

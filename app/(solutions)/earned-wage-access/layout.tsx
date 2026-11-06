@@ -10,7 +10,7 @@ import FAQPageJsonLd from "@/app/components/FAQPageJsonLd";
 import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "Earned Wage Access (EWA) for Factory Workers | InOps Salary++";
+const PAGE_TITLE = "Earned Wage Access (EWA) for Factory Workers | Salary++";
 const PAGE_DESCRIPTION =
   "Earned wage access for India's industrial workforce: workers withdraw wages already earned, verified against biometric attendance — no loans, no employer liability, settlement automated with payroll.";
 

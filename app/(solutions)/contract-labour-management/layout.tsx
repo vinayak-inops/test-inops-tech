@@ -4,7 +4,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import { clmsFaqItems } from "@/app/lib/clmsFaqItems";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "Contract Labour Management System Software India | InOps";
+const PAGE_TITLE = "Contract Labour Management System (CLMS) India | Iddion RegX";
 
 const PAGE_DESCRIPTION =
   "Contract labour management system for Indian plants: gate pass, biometric attendance, PF/ESI, wages and CLRA registers on one platform. Book a demo.";

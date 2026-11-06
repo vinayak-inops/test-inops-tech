@@ -3,7 +3,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = routeMetadata({
-  title: "Case Studies: Contract Workforce Management in Indian Manufacturing | InOps",
+  title: "Case Studies: Contract Workforce Management in India | InOps",
   description:
     "Anonymised case studies of InOps and Iddion RegX at Indian manufacturers across automotive, cement, electronics, metal and steel, and pharma. Every figure is measured and approved by the customer.",
   path: "/case-studies",
@@ -14,7 +14,7 @@ export const metadata: Metadata = routeMetadata({
     "workforce management automotive OEM",
     "CLRA compliance case study",
   ],
-  index: false, // keep noindex until first case study is approved
+  index: true,
 });
 
 export default function CaseStudiesLayout({ children }: { children: React.ReactNode }) {

@@ -3,7 +3,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = routeMetadata({
-  title: "Enterprise Workforce Compliance Platform | CLMS + HRIS + Access Control — InOps",
+  title: "Enterprise Operations Platform | Asset, Warehouse & Delivery",
   description:
     "One platform for workforce compliance and access control: CLMS, HRIS, biometric attendance, gate management, and statutory compliance — unified across all your industrial sites.",
   path: "/enterprise-solution",

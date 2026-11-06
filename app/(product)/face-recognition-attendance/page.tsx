@@ -619,7 +619,7 @@ export default function BiometricAccessControlPage() {
                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-40" aria-hidden />
                         <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.7)]" aria-hidden />
                       </span>
-                      Face recognition attendance system
+                      Face Recognition Terminals
                     </span>
                   </motion.div>
                   <motion.h1 className="home-display-heading inops-type-hero mt-5 text-slate-900 sm:mt-6"
@@ -629,7 +629,7 @@ export default function BiometricAccessControlPage() {
                   >
                     Face Recognition Attendance System{" "}
                     <span className="font-semibold text-[color:var(--inops-blue)]">
-                      for Industrial Sites
+                      for Factories
                     </span>
                   </motion.h1>
                   <motion.p
@@ -641,7 +641,7 @@ export default function BiometricAccessControlPage() {
                     Enterprise face recognition terminals for factory gates — liveness detection, CLMS and HRIS integration, multi-site ready.
                   </motion.p>
                   <motion.div
-                    className="mt-8 sm:mt-9"
+                    className="mt-8 flex flex-wrap items-center gap-3 sm:mt-9"
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: smoothEase, delay: 0.18 }}
@@ -650,8 +650,13 @@ export default function BiometricAccessControlPage() {
                       href="/contact"
                       className="group inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white shadow-md shadow-blue-600/30 transition hover:bg-blue-700 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
                     >
-                      Get In Touch
-                     
+                      Get a Quote
+                    </Link>
+                    <Link
+                      href="/biometric-devices"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-8 py-3.5 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 hover:-translate-y-0.5"
+                    >
+                      Compare Devices
                     </Link>
                   </motion.div>
                 </div>

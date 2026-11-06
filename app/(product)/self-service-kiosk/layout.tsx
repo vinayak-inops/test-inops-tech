@@ -4,8 +4,7 @@ import ProductSchemaInjector from "@/app/components/ProductSchemaInjector";
 import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
-const PAGE_TITLE =
-  "Employee Self Service Portal & Kiosk for Factory Workforces | InOps";
+const PAGE_TITLE = "Employee Self-Service Kiosk for Factories | InOps";
 const PAGE_DESCRIPTION =
   "Employee self-service for workforces without laptops — attendance, payslips, leave and claims through a shop-floor kiosk, mobile app or web portal. Built for factory and contract workforces in India.";
 

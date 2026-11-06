@@ -3,7 +3,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import { clraComplianceAuditFaqItems } from "@/app/lib/clraComplianceAuditFaqItems";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "CLRA Compliance Audit for Principal Employers | Contractor Licence & Form V/XIII Review — InOps";
+const PAGE_TITLE = "CLRA & Labour Code Compliance Audit | Principal Employers";
 const PAGE_DESCRIPTION =
   "CLRA compliance audit built for principal employers — contractor licence validity, Form V/XIII accuracy, statutory register review, and principal-employer liability exposure assessment across industrial plants.";
 

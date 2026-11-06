@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ModuleData } from "@/app/lib/module";
@@ -213,13 +214,13 @@ export default function HeroSection({ data }: Props) {
             transition={{ delay: 0.3 }}
             className="mt-8 flex flex-wrap gap-3"
           >
-            <button className="group rounded-xl bg-[var(--inops-blue)] px-5 py-3 text-sm font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg hover:to-blue-500">
-              Request a Demo
-            </button>
-            <button className="group flex items-center gap-2 rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm px-5 py-3 text-sm font-bold text-gray-700 shadow-sm transition-all hover:bg-gray-50 hover:-translate-y-0.5 hover:border-blue-200">
-              See How It Works
+            <Link href="/contact" className="group rounded-xl bg-[var(--inops-blue)] px-5 py-3 text-sm font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg hover:to-blue-500">
+              Book a Demo
+            </Link>
+            <Link href="/contract-labour-management" className="group flex items-center gap-2 rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm px-5 py-3 text-sm font-bold text-gray-700 shadow-sm transition-all hover:bg-gray-50 hover:-translate-y-0.5 hover:border-blue-200">
+              All CLMS Modules
               <span className="opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-blue-600">→</span>
-            </button>
+            </Link>
           </motion.div>
 
           <AnimatedCardGrid className="mt-10 grid grid-cols-3 gap-3">

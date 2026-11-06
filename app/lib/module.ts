@@ -50,13 +50,13 @@
 export const modules: ModuleData[] = [
   {
     slug: "attendance-leave",
-    badge: " Iddion RegX - Attendance & Leave",
-    title: "Contract Worker Attendance & Leave Management Software (CLRA 9-Day Rule)",
+    badge: "Iddion RegX CLMS · Attendance & Leave",
+    title: "Contract Worker Attendance & Leave Management",
     subDescription:
       "Automate contract worker attendance, shift management, and leave tracking — biometric verification, real-time headcount, and CLRA 9-day continuous attendance monitoring across all sites. Part of Iddion RegX, InOps' contract labour management system",
     description:
       "Automate contract worker attendance, shift management, and leave tracking — biometric verification, real-time headcount, and CLRA 9-day continuous attendance monitoring across all sites. Iddion RegX captures every punch as both an attendance record and a compliance record.",
-    seoTitle: "Contract Worker Attendance & Leave Management |  Iddion RegX CLMS",
+    seoTitle: "Contract Worker Attendance & Leave Software | Iddion RegX",
     seoKeywords: [
       "contract worker attendance",
       "shift roster management factory",
@@ -233,13 +233,13 @@ export const modules: ModuleData[] = [
 
   {
     slug: "compliance-report",
-    badge: "Iddion RegX - CLRA Compliance",
-    title: "CLRA Compliance Reporting & Register Management",
+    badge: "Iddion RegX CLMS · Compliance",
+    title: "Contract Labour Compliance Reporting & Registers",
     description:
       "Maintain digital CLRA registers, generate statutory returns, and stay audit-ready across every site and state. Iddion RegX builds compliance records from live gate events — so every register entry traces to a verified punch, not a manual entry.",
     subDescription:
       "Maintain digital CLRA registers, generate statutory returns, and stay audit-ready across every site and state.",
-    seoTitle: "CLRA Compliance Software — Digital Registers, Licences & Statutory Returns | InOps",
+    seoTitle: "Contract Labour Compliance Software | Registers & Returns",
     seoDescription:
       "CLRA compliance software for principal employers: automated Form V & Form XIII registers, contractor licence tracking, 9-day rest-rule alerts, and audit-ready statutory returns — generated from live gate data.",
     seoKeywords: [
@@ -424,13 +424,13 @@ export const modules: ModuleData[] = [
 
   {
     slug: "background-verification",
-    badge: "Iddion RegX - Background Verification",
-    title: "Background Verification for Contract Workers (BGV)",
+    badge: "Iddion RegX CLMS · Background Verification",
+    title: "Contract Worker Onboarding & BGV Software",
     description:
       "Run criminal record checks, UAN employment history verification, and blue-collar BGV for every contract worker — with automatic re-verification on expiry and gate-blocking on adverse or pending status. Part of Iddion RegX, InOps' contract labour management system.",
     subDescription:
       "Automate contract worker attendance, shift management, and leave tracking — biometric verification, real-time headcount, and CLRA 9-day continuous attendance monitoring across all sites. Part of Iddion RegX, InOps' contract labour management system",
-     seoTitle: "Contractor Onboarding & Background Verification Module | Iddion RegX CLMS Module",
+     seoTitle: "Contract Worker Onboarding & BGV Software | Iddion RegX",
     seoKeywords: [
       "contractor onboarding software",
       "worker background verification module",
@@ -605,13 +605,13 @@ faq: [
 
   {
     slug: "contractor-management",
-    badge: "Iddion RegX - Contractor Core",
-    title: "Contractor Compliance & Vendor Management Software",
+    badge: "Iddion RegX CLMS · Contractor Management",
+    title: "Contractor & Vendor Compliance Management",
     description:
       "Manage contractor compliance centrally: licences, CLRA registrations, headcount limits, document expiry alerts, and contractor scorecards across every vendor and site from one dashboard.",
      subDescription:
       "Automate contract worker attendance, shift management, and leave tracking — biometric verification, real-time headcount, and CLRA 9-day continuous attendance monitoring across all sites. Part of Iddion RegX, InOps' contract labour management system",
-      seoTitle: "Contractor Management & Compliance Software | Licences, Renewals — InOps",
+      seoTitle: "Contractor Management Software | Licences & Compliance",
     seoKeywords: [
       "contractor compliance software India",
       "contractor management system",
@@ -793,13 +793,13 @@ faq: [
 
  {
     slug: "wage-payroll",
-    badge: "Iddion RegX - Wage & Invoice",
-    title: "Contract Labour Wage & Payroll Compliance Software",
+    badge: "Iddion RegX CLMS · Wage & Payroll",
+    title: "Contract Labour Payroll Software",
     description:
       "Automate contract labour wage calculations, OT approvals, and PF/ESI deductions — and reconcile contractor invoices against biometric attendance records before finance sign-off.",
     subDescription:
       "Automate contract worker attendance, shift management, and leave tracking — biometric verification, real-time headcount, and CLRA 9-day continuous attendance monitoring across all sites. Part of Iddion RegX, InOps' contract labour management system",
-      seoTitle: "Contract Labour Payroll Software | Wages, OT & Statutory Deductions — InOps",
+      seoTitle: "Contract Labour Payroll Software | Wages, OT, PF/ESI",
     seoKeywords: [
       "contract labour payroll software",
       "contractor payroll processing India",
@@ -981,13 +981,13 @@ faq: [
 
   {
     slug: "cxo-dashboard",
-    badge: "Iddion RegX - CXO Dashboard",
-    title: "CXO Dashboard for Contract Workforce Compliance",
+    badge: "Iddion RegX CLMS · CXO Dashboard",
+    title: "Contract Workforce Analytics Dashboard for CXOs",
     description:
       "Real-time contractor workforce analytics for leadership: headcount by site, compliance posture, cost leakage, and vendor scorecards — without waiting for month-end reporting packs. Built specifically for contract labour visibility, not permanent-employee HRIS.",
      subDescription:
       "Automate contract worker attendance, shift management, and leave tracking — biometric verification, real-time headcount, and CLRA 9-day continuous attendance monitoring across all sites. Part of Iddion RegX, InOps' contract labour management system",
-    seoTitle: "CXO Dashboard — Contractor Workforce Analytics & Cost Leakage | InOps",
+    seoTitle: "Contract Workforce Analytics Dashboard | Iddion RegX",
     seoKeywords: [
       "contractor workforce analytics",
       "workforce dashboard manufacturing",
@@ -1165,13 +1165,13 @@ faq: [
 
   {
     slug: "ai-assistance",
-    badge: "Iddion RegX - AI Assistant",
-    title: "AI Workforce Compliance Assistant",
+    badge: "Iddion RegX CLMS · AI Assistant",
+    title: "AI Assistant for Contract Labour Compliance",
     description:
       "Ask InOps AI questions about attendance, compliance, payroll, or contractor status and get instant answers, anomaly alerts, and automated report generation — across all your CLMS data, processed within your own environment.",
      subDescription:
       "Automate contract worker attendance, shift management, and leave tracking — biometric verification, real-time headcount, and CLRA 9-day continuous attendance monitoring across all sites. Part of Iddion RegX, InOps' contract labour management system",
-    seoTitle: "AI Assistance for Contractor Compliance | Anomaly Detection — InOps",
+    seoTitle: "AI Contract Labour Compliance Assistant | Iddion RegX",
     seoKeywords: [
       "AI workforce compliance",
       "attendance anomaly detection",
@@ -1352,13 +1352,13 @@ faq: [
 
   {
     slug: "challan-reconciliation",
-    badge: "Iddion RegX - Challan Recon",
-    title: "Challan & Invoice Reconciliation for Contract Labour",
+    badge: "Iddion RegX CLMS · Challan Reconciliation",
+    title: "PF & ESI Challan Reconciliation for Contract Labour",
     description:
       "Automatically match PF and ESI challans against attendance and payroll records, catching the 25–30% discrepancy rate typical of manual contractor billing — before it reaches the statutory deadline or the finance team.",
     subDescription:
       "Automate contract worker attendance, shift management, and leave tracking — biometric verification, real-time headcount, and CLRA 9-day continuous attendance monitoring across all sites. Part of Iddion RegX, InOps' contract labour management system",
-      seoTitle: "Challan & Invoice Reconciliation for Contract Labour | InOps",
+      seoTitle: "PF & ESI Challan Reconciliation Software | Iddion RegX",
     seoKeywords: [
       "contractor invoice reconciliation",
       "challan reconciliation software",
@@ -1540,13 +1540,13 @@ faq: [
 
   {
     slug: "gate-compliance",
-    badge: "Iddion RegX - Gate Compliance",
-    title: "Gate Pass Management System for Industrial Sites",
+    badge: "Iddion RegX CLMS · Gate Compliance",
+    title: "Gate Pass Management System for Factories",
     description:
       "InOps gate pass management system enforces compliance rules at the point of entry verifying contractor licences, Form V coverage, and headcount limits before a worker crosses the gate, then writing every event to the statutory compliance record in real time. Iddion RegX captures every punch as both an attendance record and a compliance record.",
      subDescription:
       "Automate contract worker attendance, shift management, and leave tracking — biometric verification, real-time headcount, and CLRA 9-day continuous attendance monitoring across all sites. Part of Iddion RegX, InOps' contract labour management system",
-      seoTitle: "Gate Pass Management System | Gate Compliance & Access Control — InOps CLMS",
+      seoTitle: "Gate Pass Management System for Factories | InOps",
     seoDescription:
       "Gate pass management system for industrial sites: contractor licence verification, CLRA headcount enforcement, biometric entry control, and real-time statutory record updates — at every gate, every shift.",
     seoKeywords: [
@@ -1734,7 +1734,7 @@ faq: [
 
   {
     slug: "onboarding-offboarding",
-    badge: "Iddion RegX - Onboarding & Offboarding",
+    badge: "Iddion RegX CLMS · Onboarding & Offboarding",
     title: "Contractor Onboarding Software",
     description:
       "InOps digitises the full contractor lifecycle from document collection, BGV, and induction on day one, to structured exits with asset recovery, final settlement, and statutory closure so every entry and departure is compliant, traceable, and audit-ready. Iddion RegX captures every punch as both an attendance record and a compliance record.",

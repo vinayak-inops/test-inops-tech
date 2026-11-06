@@ -483,14 +483,14 @@ export default function CanteenManagementPage() {
           badge={
             <span className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/90 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-blue-800 shadow-sm backdrop-blur-sm">
               <span className="h-2 w-2 shrink-0 rounded-full bg-[color:var(--inops-blue)]" aria-hidden />
-              Canteen &amp; visitor solutions
+              Canteen Management
             </span>
           }
           title={
             <>
-              <span className="block text-slate-900">Canteen Management, Meal Subsidies &amp; Visitor Check-In</span>
+              <span className="block text-slate-900">Canteen &amp; Meal Subsidy Management</span>
               {" "}
-              <span className="mt-1.5 block text-[color:var(--inops-blue)] sm:mt-2">on One Platform</span>
+              <span className="mt-1.5 block text-[color:var(--inops-blue)] sm:mt-2">for Factories</span>
             </>
           }
           subtitle="InOps handles biometric meal entitlement, payroll-linked subsidies, and waste tracking — plus visitor passes and lobby flows — on one platform across your campus."
@@ -507,9 +507,9 @@ export default function CanteenManagementPage() {
           gradientClassName="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-white from-0% via-white/[0.98] via-[42%] to-transparent to-[62%] lg:via-[44%] lg:to-[68%]"
           imageEdgeFadeClassName="bg-gradient-to-r from-white via-white/80 to-transparent lg:via-[28%] lg:to-[52%]"
           mobileStackGradientClassName="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-white via-white/55 to-white/95 sm:hidden"
-          primaryCta={{ label: "Get in touch", href: "/contact" }}
+          primaryCta={{ label: "Book a Demo", href: "/contact" }}
           primaryCtaClassName="text-center border-2 bg-blue-700 font-bold text-white py-2 px-4 border-blue-700 rounded-full"
-          secondaryCta={{ label: "How it works", href: "#canteen-realtime-visibility" }}
+          secondaryCta={{ label: "See How It Works", href: "#canteen-realtime-visibility" }}
           secondaryCtaClassName="text-center border-2 border-gray-200 bg-white py-2 px-4 rounded-full"
           livePopups={[
             {

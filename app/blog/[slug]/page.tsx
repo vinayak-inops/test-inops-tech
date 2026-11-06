@@ -36,7 +36,16 @@ export default async function BlogArticlePage({ params }: PageProps) {
   const post = getBlogPost(slug);
   if (!post) notFound();
 
-  const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const related = blogPosts
+    .filter((p) => p.slug !== post.slug && p.tab === post.tab && !p.hideFromListing)
+    .slice(0, 3);
+
+  const TAB_PRODUCT_HREF: Record<string, string> = {
+    ewa: "/earned-wage-access",
+    clms: "/contract-labour-management",
+    clra: "/contract-labour-management",
+    biometric: "/face-recognition-attendance",
+  };
 
   return (
     <article className="min-h-screen bg-[#eef4f8] text-slate-950">
@@ -61,7 +70,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </h1>
           <p className="mt-4 text-sm text-slate-600">
             <time dateTime={post.dateIso}>{post.date}</time>
-            {post.dateModifiedIso ? (
+            {post.dateModifiedIso && post.dateModifiedIso > post.dateIso ? (
               <>
                 <span aria-hidden> · </span>
                 <span className="text-blue-600">
@@ -74,11 +83,13 @@ export default async function BlogArticlePage({ params }: PageProps) {
             ) : null}
             <span aria-hidden> · </span>
             {post.readMinutes} min read
-            {post.personAuthor ? (
+            {post.author ? (
               <>
                 <span aria-hidden> · </span>
                 <span className="font-medium text-slate-700">{post.author}</span>
-                <span className="text-slate-400">, Founder &amp; CEO, InOps IT Solutions</span>
+                {post.personAuthor ? (
+                  <span className="text-slate-400">, Founder &amp; CEO, InOps IT Solutions</span>
+                ) : null}
               </>
             ) : null}
           </p>
@@ -115,7 +126,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-0">
         {post.sections.map((section, i) => (
-          <section key={i} className="mb-8">
+          <div key={i} className="mb-8">
             {section.heading ? (
               <h2 className="mt-2 text-xl font-semibold text-slate-900">{section.heading}</h2>
             ) : null}
@@ -176,11 +187,11 @@ export default async function BlogArticlePage({ params }: PageProps) {
                 </table>
               </div>
             ) : null}
-          </section>
+          </div>
         ))}
 
         {post.faqs && post.faqs.length > 0 ? (
-          <section className="mt-10 border-t border-slate-200 pt-10">
+          <section className="no-site-reveal mt-10 border-t border-slate-200 pt-10">
             <h2 className="text-xl font-semibold text-slate-900">Frequently asked questions</h2>
             <dl className="mt-6 space-y-6">
               {post.faqs.map((faq, i) => (
@@ -213,6 +224,19 @@ export default async function BlogArticlePage({ params }: PageProps) {
                 </li>
               ))}
             </ul>
+            {TAB_PRODUCT_HREF[post.tab] ? (
+              <div className="mt-8 rounded-xl border border-slate-200 bg-slate-50 px-5 py-4">
+                <p className="text-sm text-slate-600">
+                  Explore the product behind this topic:{" "}
+                  <Link
+                    href={TAB_PRODUCT_HREF[post.tab]}
+                    className="font-semibold text-[color:var(--inops-blue)] underline-offset-2 hover:underline"
+                  >
+                    {post.category} →
+                  </Link>
+                </p>
+              </div>
+            ) : null}
           </aside>
         ) : null}
       </div>

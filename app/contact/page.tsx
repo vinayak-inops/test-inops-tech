@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
 import { FlyInText } from "@/app/components/FlyInText";
@@ -85,9 +86,17 @@ export default function ContactPage() {
                   aria-hidden
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center px-6 py-5 sm:py-6">
-                  <p className={inopsUi.heroKicker}>InOps</p>
+                  <p className={inopsUi.heroKicker}>Contact</p>
                   <h1 className="home-display-heading inops-type-hero mt-4 text-white">Contact InOps: Book a Demo or Get Support</h1>
                   <p className={`${inopsUi.heroBannerDesc} mt-3 max-w-md`}>{contactBanner.tagline}</p>
+                  <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+                    <a href="#contact-form" className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-[color:var(--inops-blue)] shadow-sm transition hover:bg-blue-50 active:scale-95">
+                      Book a Demo
+                    </a>
+                    <a href="#contact-form" className="inline-flex items-center gap-2 rounded-xl border border-white/70 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20 active:scale-95">
+                      Raise a Support Ticket
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -108,11 +117,11 @@ export default function ContactPage() {
               </FlyInText>
             </div>
             <FlyInText as="p" direction="up" delay={0.08} className={`max-w-lg ${inopsUi.lead}`}>
-              Reach InOps IT Solutions at +91 80277 45220 or contact@inops.tech, or visit our office in Bommasandra Industrial Area, Bengaluru. Use the form below to book a CLMS or biometric demo, ask about implementation, or raise an AMC support request.
+              Reach InOps IT Solutions at +91 80277 45220 or contact@inops.tech, or visit our office in Bommasandra Industrial Area, Bengaluru. Use the form below to book a <Link href="/contract-labour-management" className="underline font-medium hover:opacity-75">CLMS</Link> or biometric demo, ask about implementation, or raise an AMC support request.
             </FlyInText>
           </div>
 
-          <div className="grid grid-cols-1 gap-7 lg:grid-cols-[0.9fr_1.1fr]">
+          <div id="contact-form" className="grid grid-cols-1 gap-7 lg:grid-cols-[0.9fr_1.1fr]">
             <motion.div
               className="relative overflow-hidden rounded-[1.65rem] border border-white bg-white p-6 shadow-[0_18px_55px_-36px_rgba(15,47,87,0.5)] ring-1 ring-slate-900/[0.04] sm:p-7 lg:p-8"
               initial={{ opacity: 0, x: -36 }}

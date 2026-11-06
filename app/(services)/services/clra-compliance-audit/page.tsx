@@ -14,17 +14,17 @@ export default function CLRAComplianceAuditPage() {
           <div>
             <div className="inline-flex items-center gap-[10px] text-[10.5px] tracking-[0.18em] uppercase text-white/[0.82] mb-7 font-semibold font-mono">
               <span className="w-[7px] h-[7px] rounded-full bg-[#5de3a5] flex-shrink-0" />
-              SERVICE 04 / 05 &nbsp;·&nbsp; CLRA COMPLIANCE AUDIT
+              InOps Services
             </div>
             <h1 className="text-[clamp(32px,3.8vw,50px)] leading-[1.10] font-medium text-white tracking-[-0.02em] m-0">
-              CLRA Compliance Audit for Principal Employers
+              CLRA & Labour Code Compliance Audit for Principal Employers
             </h1>
             <p className="mt-[22px] text-[15px] leading-[1.7] text-white/[0.78] max-w-[500px]">
               We review your contractor registers, Form V and Form XIII filings, contractor licence validity, and principal-employer statutory obligations under CLRA — and deliver a scored gap report with a prioritised action plan before your next labour inspection.
             </p>
             <div className="flex gap-3 mt-9 flex-wrap">
               <Link href="/contact" className="inline-flex items-center gap-2 py-[14px] px-6 rounded-lg text-[14.5px] font-bold no-underline border-2 border-white/30 bg-white/[0.18] text-white transition-all duration-150 hover:-translate-y-px hover:opacity-90 hover:bg-white/[0.26]">
-                Schedule Assessment
+                Schedule an Audit
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
               </Link>
               <Link href="/contact" className="inline-flex items-center gap-2 py-[14px] px-6 rounded-lg text-[14.5px] font-bold no-underline border-2 border-white/50 bg-transparent text-white transition-all duration-150 hover:-translate-y-px hover:opacity-90 hover:bg-white/[0.08]">

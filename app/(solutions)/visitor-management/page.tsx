@@ -144,10 +144,17 @@ export default function VisitorManagementPage() {
     <>
       <div className="solution-product-section-gap min-h-screen bg-white text-gray-900">
         <SolutionLandingHero
-          title="Visitor management for secure, efficient sites"
+          badge={
+            <span className="inline-flex rounded-full border border-blue-200/90 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-blue-800 shadow-sm backdrop-blur-sm">
+              InOps VizOne
+            </span>
+          }
+          title="Visitor Management System for Factories &amp; Offices"
           subtitle="Streamline check-in, badges, host workflows, and real-time visibility across lobbies and restricted zones, integrated with your access stack."
           imageSrc={visitorHeroImage}
           imageAlt="Visitor management and secure facility lobby"
+          primaryCta={{ label: "Book a Demo", href: "/contact" }}
+          secondaryCta={{ label: "Download Brochure", href: "/brochures" }}
         />
 
         {/* Content – flow diagram left, text right */}

@@ -4,7 +4,7 @@ import FAQPageJsonLd from "@/app/components/FAQPageJsonLd";
 import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "Face Recognition Attendance System for Factories | Biometric Attendance Machines — InOps";
+const PAGE_TITLE = "Face Recognition Attendance System for Factories | InOps";
 const PAGE_DESCRIPTION =
   "Face recognition attendance system for factory gates: biometric attendance machines with liveness detection, fingerprint readers, and RFID — supplied, installed and integrated with CLMS for Indian manufacturers.";
 

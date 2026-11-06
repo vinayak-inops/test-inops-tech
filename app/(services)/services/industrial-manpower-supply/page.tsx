@@ -14,17 +14,17 @@ export default function IndustrialManpowerSupplyPage() {
           <div>
             <div className="inline-flex items-center gap-[10px] text-[10.5px] tracking-[0.18em] uppercase text-white/[0.82] mb-7 font-semibold font-mono">
               <span className="w-[7px] h-[7px] rounded-full bg-[#5de3a5] flex-shrink-0" />
-              SERVICE 05 / 05 &nbsp;·&nbsp; INDUSTRIAL MANPOWER SUPPLY
+              InOps Services
             </div>
             <h1 className="text-[clamp(32px,3.8vw,50px)] leading-[1.10] font-medium text-white tracking-[-0.02em] m-0">
-              Industrial Manpower Supply: Workers Verified and Ready Before Day One.
+              Industrial Manpower Supply in India
             </h1>
             <p className="mt-[22px] text-[15px] leading-[1.7] text-white/[0.78] max-w-[500px]">
               Industrial manpower supply and contract labour deployment built around a compliance ready workforce — background-verified, digitally onboarded and biometrically enrolled before they report on site.
             </p>
             <div className="flex gap-3 mt-9 flex-wrap">
               <Link href="/contact" className="inline-flex items-center gap-2 py-[14px] px-6 rounded-lg text-[14.5px] font-bold no-underline border-2 border-white/30 bg-white/[0.18] text-white transition-all duration-150 hover:-translate-y-px hover:opacity-90 hover:bg-white/[0.26]">
-                Explore Workforce Services
+                Request Manpower
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
               </Link>
               <Link href="/contact" className="inline-flex items-center gap-2 py-[14px] px-6 rounded-lg text-[14.5px] font-bold no-underline border-2 border-white/50 bg-transparent text-white transition-all duration-150 hover:-translate-y-px hover:opacity-90 hover:bg-white/[0.08]">

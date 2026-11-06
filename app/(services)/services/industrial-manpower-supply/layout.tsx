@@ -3,7 +3,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import { industrialManpowerSupplyFaqItems } from "@/app/lib/industrialManpowerSupplyFaqItems";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "Industrial Manpower Supply in India | Compliance-Ready Contract Workers for Manufacturing — InOps";
+const PAGE_TITLE = "Industrial Manpower Supply India | Verified Contract Workers";
 const PAGE_DESCRIPTION =
   "Industrial manpower supply and contract labour deployment built around a compliance-ready workforce — background-verified, digitally onboarded and biometrically enrolled before they report on site.";
 

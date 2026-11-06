@@ -192,7 +192,7 @@ const TERMS: TermData[] = [
     heading: "Code on Wages, 2019", alias: "Also called: Wage Code, CoW",
     statusClass: "gl-s-current", statusLabel: "Current law",
     answer: "The Code on Wages, 2019 is the Labour Code that governs minimum wages, payment of wages, bonus and equal pay for all employees. It replaced the Minimum Wages Act, 1948, the Payment of Wages Act, 1936, the Payment of Bonus Act, 1965 and the Equal Remuneration Act, 1976 on 21 November 2025.",
-    detail: (<><h4>In plain terms</h4><p>Unlike the old Minimum Wages Act, which covered only listed "scheduled employments", the Code extends minimum wage protection to all employees. Its Central Rules prescribe an Employee Register (Form I), a combined register of wages, overtime and deductions (Form IV) and an attendance register-cum-muster roll (Form IX).</p></>)
+    detail: (<><h4>In plain terms</h4><p>Unlike the old Minimum Wages Act, which covered only listed "scheduled employments", the Code extends minimum wage protection to all employees. Its Central Rules prescribe an Employee Register (Form I), a combined register of wages, overtime and deductions (Form IV) and an attendance register-cum-muster roll (Form IX).</p><h4>Related on InOps</h4><ul><li><Link href="/hris">HR information system</Link></li><li><Link href="/contract-labour-management">Contract labour management</Link></li></ul></>)
   },
   {
     id: "contract-labour", cat: "parties",
@@ -224,7 +224,7 @@ const TERMS: TermData[] = [
     heading: "ECR (Electronic Challan cum Return)", alias: "Also called: PF ECR, EPFO ECR",
     statusClass: "gl-s-current", statusLabel: "Current law",
     answer: "ECR (Electronic Challan cum Return) is the monthly online return employers file with EPFO, reporting each member's wages and PF contributions and generating the payment challan in one step. It is filed on the EPFO Unified Portal against each employee's UAN.",
-    detail: (<><h4>In plain terms</h4><p>Each line of the file carries the member's UAN and name, gross wages, the EPF/EPS/EDLI wage bases, employee and employer contributions, and NCP days. For contract workers, the contractor files ECR under its own establishment code.</p></>)
+    detail: (<><h4>In plain terms</h4><p>Each line of the file carries the member's UAN and name, gross wages, the EPF/EPS/EDLI wage bases, employee and employer contributions, and NCP days. For contract workers, the contractor files ECR under its own establishment code.</p><h4>Related on InOps</h4><ul><li><Link href="/contract-labour-management">Contract labour management</Link></li></ul></>)
   },
   {
     id: "ewa", cat: "systems",
@@ -240,7 +240,7 @@ const TERMS: TermData[] = [
     heading: "Establishment registration", alias: "Also called: OSH registration, Principal employer registration",
     statusClass: "gl-s-current", statusLabel: "Current law",
     answer: "Establishment registration is the single registration an employer obtains under the OSH Code for a workplace, replacing separate registrations such as those under the Factories Act and the Contract Labour Act. Under the Central Rules it is applied for online in Form I on the Shram Suvidha Portal.",
-    detail: (<><h4>In plain terms</h4><p>The certificate is due within seven days of a complete application; if it isn't issued, the establishment is deemed registered. Rule 3(6) requires existing establishments to update their particulars in Form I within six months of 8 May 2026.</p></>)
+    detail: (<><h4>In plain terms</h4><p>The certificate is due within seven days of a complete application; if it isn't issued, the establishment is deemed registered. Rule 3(6) requires existing establishments to update their particulars in Form I within six months of 8 May 2026.</p><h4>Related on InOps</h4><ul><li><Link href="/services/clra-compliance-audit">CLRA compliance audit</Link></li></ul></>)
   },
   {
     id: "face-recognition-attendance", cat: "access",
@@ -256,7 +256,7 @@ const TERMS: TermData[] = [
     heading: "Floor wage and minimum wage", alias: "Also called: Minimum wage, National floor wage",
     statusClass: "gl-s-current", statusLabel: "Current law",
     answer: "A minimum wage is the lowest rate an employer may legally pay for a category of work; a floor wage is the national baseline the Central Government sets, below which no state may fix its minimum wage. Under the Code on Wages, 2019 minimum wages apply to all employees.",
-    detail: (<><h4>In plain terms</h4><p>In practice, pay your state's current notified rate for the worker's skill category and zone. States revise rates regularly, many twice a year through a variable dearness allowance.</p></>)
+    detail: (<><h4>In plain terms</h4><p>In practice, pay your state's current notified rate for the worker's skill category and zone. States revise rates regularly, many twice a year through a variable dearness allowance.</p><h4>Related on InOps</h4><ul><li><Link href="/hris">HR information system</Link></li><li><Link href="/contract-labour-management">Contract labour management</Link></li></ul></>)
   },
   {
     id: "form-v", cat: "forms",
@@ -264,7 +264,7 @@ const TERMS: TermData[] = [
     heading: "Form V", alias: "Also called: Form 5, Certificate by Principal Employer",
     statusClass: "gl-s-legacy", statusLabel: "Legacy (repealed)",
     answer: "Form V was the certificate a principal employer issued to a contractor under the CLRA Central Rules, 1971. The contractor attached it to its licence application; under the OSH Code, central licence applications use Form XXI on the Shram Suvidha Portal.",
-    detail: (<><h4>What replaces it</h4><ul><li><strong>Central rules:</strong> the contractor applies in Form XXI and the licence is issued in Form XXII.</li><li><strong>State rules vary</strong> — check the form your own state currently prescribes.</li></ul></>)
+    detail: (<><h4>What replaces it</h4><ul><li><strong>Central rules:</strong> the contractor applies in Form XXI and the licence is issued in Form XXII.</li><li><strong>State rules vary</strong> — check the form your own state currently prescribes.</li></ul><h4>Related on InOps</h4><ul><li><Link href="/blog/form-v-form-xiii-clra-guide-india">Form V and Form XIII guide</Link></li><li><Link href="/contract-labour-management">Contract labour management</Link></li></ul></>)
   },
   {
     id: "form-xiii", cat: "forms",
@@ -272,7 +272,7 @@ const TERMS: TermData[] = [
     heading: "Form XIII", alias: "Also called: Form 13, Register of Workmen Employed by Contractor",
     statusClass: "gl-s-legacy", statusLabel: "Legacy (repealed)",
     answer: "Form XIII was the Register of Workmen Employed by Contractor under Rule 75 of the CLRA Central Rules, 1971, kept by the contractor for each establishment. It recorded each contract worker's identity, designation, addresses and dates of joining and leaving.",
-    detail: (<><h4>What replaces it</h4><p>At central level, the Code on Wages (Central) Rules, 2026 prescribe an Employee Register (Form I), a combined register of wages, overtime and deductions (Form IV) and an attendance register-cum-muster roll (Form IX). Until a state's own rules are final, its old forms continue under savings clauses.</p></>)
+    detail: (<><h4>What replaces it</h4><p>At central level, the Code on Wages (Central) Rules, 2026 prescribe an Employee Register (Form I), a combined register of wages, overtime and deductions (Form IV) and an attendance register-cum-muster roll (Form IX). Until a state's own rules are final, its old forms continue under savings clauses.</p><h4>Related on InOps</h4><ul><li><Link href="/blog/form-v-form-xiii-clra-guide-india">Form V and Form XIII guide</Link></li><li><Link href="/contract-labour-management">Contract labour management</Link></li></ul></>)
   },
   {
     id: "gate-pass", cat: "access",
@@ -304,7 +304,7 @@ const TERMS: TermData[] = [
     heading: "Muster roll", alias: "Also called: Attendance register, Attendance register-cum-muster roll",
     statusClass: "gl-s-current", statusLabel: "Current law",
     answer: "A muster roll is the attendance register that records which workers were present on each working day, used as the basis for wages and inspections. Under the Labour Codes it is maintained as an attendance register-cum-muster roll, which can be kept electronically.",
-    detail: (<><h4>In plain terms</h4><p>Under the old CLRA Central Rules the contractor's muster roll was Form XVI. The Code on Wages (Central) Rules, 2026 prescribe an attendance register-cum-muster roll as Form IX. Registers may be kept electronically, provided they can be retrieved, protected and printed for an inspector.</p></>)
+    detail: (<><h4>In plain terms</h4><p>Under the old CLRA Central Rules the contractor's muster roll was Form XVI. The Code on Wages (Central) Rules, 2026 prescribe an attendance register-cum-muster roll as Form IX. Registers may be kept electronically, provided they can be retrieved, protected and printed for an inspector.</p><h4>Related on InOps</h4><ul><li><Link href="/contract-labour-management">Contract labour management</Link></li><li><Link href="/biometric-devices">Biometric attendance devices</Link></li></ul></>)
   },
   {
     id: "osh-code", cat: "law",
@@ -320,7 +320,7 @@ const TERMS: TermData[] = [
     heading: "PF and ESI", alias: "Also called: Provident Fund, EPF, Employees' State Insurance, ESIC",
     statusClass: "gl-s-current", statusLabel: "Current law",
     answer: "PF (Provident Fund) is a retirement savings scheme run by EPFO to which employer and employee both contribute; ESI (Employees' State Insurance) is a health and cash-benefit insurance scheme run by ESIC for employees earning up to a notified wage ceiling. Both now operate under the Code on Social Security, 2020.",
-    detail: (<><h4>For contract workers</h4><p>The contractor registers its workers and pays contributions. Principal employers verify this each month, because unpaid dues on their site become their problem.</p></>)
+    detail: (<><h4>For contract workers</h4><p>The contractor registers its workers and pays contributions. Principal employers verify this each month, because unpaid dues on their site become their problem.</p><h4>Related on InOps</h4><ul><li><Link href="/contract-labour-management">Contract labour management</Link></li><li><Link href="/hris">HR information system</Link></li></ul></>)
   },
   {
     id: "principal-employer-vs-contractor", cat: "parties",
@@ -344,7 +344,7 @@ const TERMS: TermData[] = [
     heading: "Shram Suvidha Portal", alias: "Also called: Unified Shram Suvidha Portal, USSP",
     statusClass: "gl-s-current", statusLabel: "Current law",
     answer: "The Shram Suvidha Portal is the Ministry of Labour and Employment's online platform for labour-law registration, returns and inspections. Under the OSH Code it is where establishments register, contractors apply for licences and employers file returns, each identified by a Labour Identification Number (LIN).",
-    detail: (<><h4>In plain terms</h4><p>The portal brings together compliance for the Chief Labour Commissioner, DGMS, ESIC and EPFO. Under the OSH Central Rules, an establishment applies for registration in Form I. Contractors apply for licences in Form XXI.</p></>)
+    detail: (<><h4>In plain terms</h4><p>The portal brings together compliance for the Chief Labour Commissioner, DGMS, ESIC and EPFO. Under the OSH Central Rules, an establishment applies for registration in Form I. Contractors apply for licences in Form XXI.</p><h4>Related on InOps</h4><ul><li><Link href="/services/clra-compliance-audit">CLRA compliance audit</Link></li><li><Link href="/contract-labour-management">Contract labour management</Link></li></ul></>)
   },
   {
     id: "turnstile-access-control", cat: "access",
@@ -360,7 +360,7 @@ const TERMS: TermData[] = [
     heading: "UAN (Universal Account Number)", alias: "Also called: PF UAN",
     statusClass: "gl-s-current", statusLabel: "Current law",
     answer: "A UAN (Universal Account Number) is the 12-digit number EPFO gives each provident fund member, which stays the same across every job they hold. Employers report contributions against the UAN in the monthly ECR.",
-    detail: (<><h4>In plain terms</h4><p>ECR is UAN-based: an employee without a UAN cannot be included. Contract workers often move between contractors at the same plant — a single UAN keeps their PF in one account instead of several.</p></>)
+    detail: (<><h4>In plain terms</h4><p>ECR is UAN-based: an employee without a UAN cannot be included. Contract workers often move between contractors at the same plant — a single UAN keeps their PF in one account instead of several.</p><h4>Related on InOps</h4><ul><li><Link href="/contract-labour-management">Contract labour management</Link></li></ul></>)
   },
   {
     id: "visitor-management", cat: "access",
@@ -376,7 +376,7 @@ const TERMS: TermData[] = [
     heading: "Wages (Labour Codes definition)", alias: "Also called: Definition of wages, 50% wage rule, Section 2(y)",
     statusClass: "gl-s-current", statusLabel: "Current law",
     answer: "Under the Labour Codes, \"wages\" has a single definition (Section 2(y) of the Code on Wages, 2019): broadly basic pay, dearness allowance and retaining allowance. If the excluded items together exceed 50% of total remuneration, the excess is added back and treated as wages.",
-    detail: (<><h4>In plain terms</h4><p>The 50% rule caps the exclusions — it does not require basic pay to be exactly 50% of CTC, a common misreading. Because PF, ESI coverage and gratuity are worked out on wages, the definition can change contributions and payouts.</p></>)
+    detail: (<><h4>In plain terms</h4><p>The 50% rule caps the exclusions — it does not require basic pay to be exactly 50% of CTC, a common misreading. Because PF, ESI coverage and gratuity are worked out on wages, the definition can change contributions and payouts.</p><h4>Related on InOps</h4><ul><li><Link href="/hris">HR information system</Link></li><li><Link href="/contract-labour-management">Contract labour management</Link></li></ul></>)
   },
 ];
 
@@ -433,13 +433,13 @@ export default function GlossaryPage() {
 
       <div className="gl-wrap">
         <nav className="gl-crumbs" aria-label="Breadcrumb">
-          <Link href="/">Home</Link><span aria-hidden="true">/</span>
-          <Link href="/blog">Resources</Link><span aria-hidden="true">/</span>
+          <Link href="/">Home</Link><span aria-hidden="true"> / </span>
+          <Link href="/blog">Resources</Link><span aria-hidden="true"> / </span>
           <span aria-current="page">Glossary</span>
         </nav>
 
         <header className="gl-hero">
-          <h1>Contract labour and workforce compliance glossary</h1>
+          <h1>Contract Labour &amp; Workforce Compliance Glossary</h1>
           <p className="lede">Plain-English definitions of the laws, forms, filings and systems that Indian plant HR, compliance and security teams deal with every day.</p>
           <div className="gl-lawnote">
             <b>India&apos;s four Labour Codes have been in force since 21 November 2025.</b>

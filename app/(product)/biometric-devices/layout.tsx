@@ -4,8 +4,7 @@ import FAQPageJsonLd from "@/app/components/FAQPageJsonLd";
 import { routeMetadata } from "@/app/lib/seoMetadata";
 import type { Metadata } from "next";
 
-const PAGE_TITLE =
-  "Biometric Devices for Attendance & Access Control | ZKTeco, eSSL, Realtime — InOps";
+const PAGE_TITLE = "Biometric Attendance Machines | ZKTeco & eSSL | InOps";
 const PAGE_DESCRIPTION =
   "Biometric devices for industrial attendance and access control — face terminals, fingerprint readers, RFID and turnstiles from ZKTeco, eSSL and Realtime. Supplied, installed, integrated and maintained across India. 3,000+ devices under management since 2014.";
 

@@ -14,7 +14,7 @@ import { routeMetadata } from "@/app/lib/seoMetadata";
 import { bgvFaqItems } from "@/app/lib/bgvFaqItems";
 import type { Metadata } from "next";
 
-const PAGE_TITLE = "Background Verification Service for Contract Workers — InOps";
+const PAGE_TITLE = "Blue-Collar Background Verification Services India | InOps";
 const PAGE_DESCRIPTION =
   "InOps verifies contract and industrial workers before site entry — Aadhaar-linked identity, criminal records, employment history, and address checks, integrated with gate access and CLMS. Deployable within days.";
 
