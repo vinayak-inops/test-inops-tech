@@ -10,7 +10,7 @@ import { homeFaqItems } from "@/app/lib/homeFaqItems";
 export default function HomePage() {
   return (
     <>
-      <HomePageJsonLd />
+      {/* <HomePageJsonLd /> */}
       <FAQPageJsonLd items={homeFaqItems} />
       <HomePageClient />
     </>
